@@ -905,3 +905,5 @@ INFO:     127.0.0.1:54349 - "POST /auth/register HTTP/1.1" 422 Unprocessable Ent
 INFO:     127.0.0.1:57108 - "GET /chat/notifications HTTP/1.1" 200 OK
 {"ts": "2026-02-26T16:10:55.631680+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "6b0f4dfa-d735-4238-8dac-23dd06954982", "path": "/", "method": "GET", "status_code": 200}
 INFO:     127.0.0.1:54139 - "GET / HTTP/1.1" 200 OK
+{"ts": "2026-02-26T16:21:31.018379+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "5b8fd516-ae88-4d45-a792-907d372b554c", "path": "/", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58986 - "GET / HTTP/1.1" 200 OK
