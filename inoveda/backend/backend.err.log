@@ -1,0 +1,49 @@
+INFO:     Started server process [24828]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     ('127.0.0.1', 58155) - "WebSocket /ws/chat/1" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     connection closed
+INFO:     ('127.0.0.1', 52370) - "WebSocket /ws/chat/1" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50766) - "WebSocket /ws/chat/1" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55573) - "WebSocket /ws/chat/1" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     connection closed
+INFO:     ('127.0.0.1', 51368) - "WebSocket /ws/chat/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InBhdGllbnQiLCJleHAiOjE3NzIxMzI2MjZ9.UMOqmZQ7OWllD5j0XSRwBTJ1IiWQDoqn4_kRqPaF9mk" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 52916) - "WebSocket /ws/chat/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InBhdGllbnQiLCJleHAiOjE3NzIxMzI2MjZ9.UMOqmZQ7OWllD5j0XSRwBTJ1IiWQDoqn4_kRqPaF9mk" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 59013) - "WebSocket /ws/chat/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InBhdGllbnQiLCJleHAiOjE3NzIxMzI2MjZ9.UMOqmZQ7OWllD5j0XSRwBTJ1IiWQDoqn4_kRqPaF9mk" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55110) - "WebSocket /ws/chat/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InBhdGllbnQiLCJleHAiOjE3NzIxMzI2MjZ9.UMOqmZQ7OWllD5j0XSRwBTJ1IiWQDoqn4_kRqPaF9mk" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 63205) - "WebSocket /ws/chat/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InBhdGllbnQiLCJleHAiOjE3NzIxMzI2MjZ9.UMOqmZQ7OWllD5j0XSRwBTJ1IiWQDoqn4_kRqPaF9mk" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 51627) - "WebSocket /ws/chat/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InBhdGllbnQiLCJleHAiOjE3NzIxMzI2MjZ9.UMOqmZQ7OWllD5j0XSRwBTJ1IiWQDoqn4_kRqPaF9mk" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 51252) - "WebSocket /ws/chat/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InBhdGllbnQiLCJleHAiOjE3NzIxMzI2MjZ9.UMOqmZQ7OWllD5j0XSRwBTJ1IiWQDoqn4_kRqPaF9mk" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 64767) - "WebSocket /ws/chat/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InBhdGllbnQiLCJleHAiOjE3NzIxMzI2MjZ9.UMOqmZQ7OWllD5j0XSRwBTJ1IiWQDoqn4_kRqPaF9mk" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 62433) - "WebSocket /ws/chat/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InBhdGllbnQiLCJleHAiOjE3NzIxMzI2MjZ9.UMOqmZQ7OWllD5j0XSRwBTJ1IiWQDoqn4_kRqPaF9mk" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 60407) - "WebSocket /ws/chat/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InBhdGllbnQiLCJleHAiOjE3NzIxMzI2MjZ9.UMOqmZQ7OWllD5j0XSRwBTJ1IiWQDoqn4_kRqPaF9mk" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65097) - "WebSocket /ws/chat/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InBhdGllbnQiLCJleHAiOjE3NzIxMzI2MjZ9.UMOqmZQ7OWllD5j0XSRwBTJ1IiWQDoqn4_kRqPaF9mk" [accepted]
+INFO:     connection open
+INFO:     connection closed

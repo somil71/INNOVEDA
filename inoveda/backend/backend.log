@@ -1,0 +1,907 @@
+{"ts": "2026-02-25T19:01:02.451250+00:00", "level": "WARNING", "logger": "main", "message": "default_jwt_secret_in_use"}
+{"ts": "2026-02-25T19:01:12.926625+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "4211bc8c-33d2-4170-8821-d5067147ebc3", "path": "/", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55398 - "GET / HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.029867+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c69846eb-d266-4318-8e0b-8b73f50c2594", "path": "/auth/register", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:63879 - "OPTIONS /auth/register HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.067510+00:00", "level": "WARNING", "logger": "passlib.handlers.bcrypt", "message": "(trapped) error reading bcrypt version"}
+{"ts": "2026-02-25T19:03:46.486902+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "cd423c61-d4af-47a1-a978-3c0992949ba9", "path": "/auth/register", "method": "POST", "status_code": 200}
+INFO:     127.0.0.1:63879 - "POST /auth/register HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.522443+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "fb3d00a9-df92-4540-aac4-2a23150a7fb4", "path": "/patient/dashboard", "method": "OPTIONS", "status_code": 200}
+{"ts": "2026-02-25T19:03:46.523441+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "108b5014-5aea-44c3-8e56-96b855f2498d", "path": "/patient/dashboard", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:63879 - "OPTIONS /patient/dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55480 - "OPTIONS /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.538443+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3e64e9f3-f39e-42a7-96af-acdaf1f97e98", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63879 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.545444+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "566347e8-1404-49ad-ade9-8f1b387ffd0f", "path": "/patient/documents", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:63879 - "OPTIONS /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.557448+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "f8ecfba3-e446-4d58-9677-805e766d545d", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55480 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.565445+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "18fc890d-57c7-473a-a4cd-2a9b371d38da", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63432 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.572443+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2782e327-9251-4b8c-95a8-e514275c95c7", "path": "/patient/cart", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:55480 - "OPTIONS /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.578449+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7b5ae8b9-9bf3-4be2-adf3-b46f8811505b", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63432 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.586453+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7265819f-9df5-4321-b72c-f6457682423d", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55480 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.592457+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "841aadf3-8dbf-439f-829a-87c749f72fd5", "path": "/patient/prescriptions", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:63432 - "OPTIONS /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.599451+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "208c3310-b2ed-4443-900d-ad2591c3137b", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55480 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.603443+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "1fd310cf-39e1-435d-b68c-334826400a55", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63432 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.608457+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "707b5784-5681-4f7f-a30b-7c29d5299e8f", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:55480 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.617463+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "856aa7bf-18e6-4b9b-a55a-da1a2a6649cf", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63432 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.619464+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "d4bc8859-7cca-41aa-b043-46e9794822cc", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55480 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:46.625984+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2bec129a-17de-4951-931c-90408306c571", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55480 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:50.658846+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c09b224e-dd21-4560-9560-8eb54248ffc6", "path": "/patient/ai-chat", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:55480 - "OPTIONS /patient/ai-chat HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:50.671850+00:00", "level": "WARNING", "logger": "core.exceptions", "message": "validation_error", "request_id": "455a42af-f4f7-471f-bc2c-b69d6e7bd16c", "path": "/patient/ai-chat"}
+{"ts": "2026-02-25T19:03:50.671850+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "455a42af-f4f7-471f-bc2c-b69d6e7bd16c", "path": "/patient/ai-chat", "method": "POST", "status_code": 422}
+INFO:     127.0.0.1:63432 - "POST /patient/ai-chat HTTP/1.1" 422 Unprocessable Entity
+{"ts": "2026-02-25T19:03:52.836644+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "5cdad999-a76c-46eb-86eb-1cb7dec5bfaf", "path": "/patient/emergency", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:63432 - "OPTIONS /patient/emergency HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:52.856598+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "6a37926b-7253-457e-8ded-6e4d2f824c7b", "path": "/patient/emergency", "method": "POST", "status_code": 200}
+INFO:     127.0.0.1:55480 - "POST /patient/emergency HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:56.506138+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "d9257625-7da2-4766-9b5b-be93aa14ca61", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55480 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:57.519648+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "80ddb32b-359e-4e96-8237-c9c300dbf437", "path": "/patient/appointments", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:55480 - "OPTIONS /patient/appointments HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:03:57.533732+00:00", "level": "INFO", "logger": "core.exceptions", "message": "http_exception", "request_id": "21e4b111-78c8-4597-bbd4-1068ffb353e3", "path": "/patient/appointments", "status_code": 404}
+{"ts": "2026-02-25T19:03:57.533732+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "21e4b111-78c8-4597-bbd4-1068ffb353e3", "path": "/patient/appointments", "method": "POST", "status_code": 404}
+INFO:     127.0.0.1:63432 - "POST /patient/appointments HTTP/1.1" 404 Not Found
+{"ts": "2026-02-25T19:04:05.476331+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7799534f-6624-4a91-b54d-e559f9840890", "path": "/chat/messages", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:61620 - "OPTIONS /chat/messages HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:04:05.488040+00:00", "level": "WARNING", "logger": "core.exceptions", "message": "validation_error", "request_id": "6c85a92d-6fc5-4139-b4c5-3768d695b1de", "path": "/chat/messages"}
+{"ts": "2026-02-25T19:04:05.489040+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "6c85a92d-6fc5-4139-b4c5-3768d695b1de", "path": "/chat/messages", "method": "POST", "status_code": 422}
+INFO:     127.0.0.1:61620 - "POST /chat/messages HTTP/1.1" 422 Unprocessable Entity
+{"ts": "2026-02-25T19:04:06.517876+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e066c2b1-1c42-416e-b051-a41666bea5ba", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61620 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:04:16.920995+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a2bcc0ea-cc72-4c25-aef3-6997d208bf51", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57904 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:04:26.934642+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7137734c-c816-4273-8a86-c97f3e727e87", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52209 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:04:37.233999+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "fd55495f-59c0-40ce-94db-ace806c5f264", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58497 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:04:46.921969+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "d7aa13d1-fd39-4d67-a005-4e844a74d69d", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55556 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:04:57.231566+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "1dbafc49-f3f4-4b8e-977e-8f53378aae2c", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:51436 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:05:06.927254+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8a32d7cf-1e7b-4a04-ad4d-761082a9ee96", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60972 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:05:26.235191+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a09765a8-3870-411c-8615-133a71e8c282", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:62596 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:06:25.938838+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "ff2e0ac5-1a15-417b-a3d7-c1d3d431c343", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59667 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:07:26.245875+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c2b8edde-c714-416e-8cde-32d6ba5e88bd", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50107 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:08:25.942719+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c47514e9-bed2-4c9e-b7ed-3d917e8382db", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:49794 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:09:26.263173+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "9308756d-845b-4a34-99b4-38afee09f655", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54586 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:10:25.953105+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "6bf744f5-5d9c-41e6-b498-20bc100ad415", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60175 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:11:26.252794+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "0be5a8ac-e34a-4ab8-b724-730dd5989650", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60351 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:12:25.971364+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3ed952c8-2b5c-4c48-aca7-9a6738d2b749", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61579 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:02.270616+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3479da3c-4174-4341-9115-4ca43eaf8d31", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58005 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:02.280608+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "ebada5b9-9990-40d8-9e97-103081d905ff", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58005 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:02.292689+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "95cc1c46-0333-49d7-b501-7ae6fcec7ed6", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58005 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:02.301695+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a4b6f65d-7948-42f2-88a7-88e0e19236fd", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58005 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:02.309613+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "1a8fd435-2164-480f-8446-aae37d9c4ab3", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58005 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:02.319195+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "fdc66c92-0b1b-415f-be92-23c0fb37712d", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58005 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:02.328164+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "751d949c-432c-47bd-aae9-b89986c8b7b1", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58005 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:02.334848+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a51e128b-6c03-4357-a108-3f9da153a264", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58005 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:02.343067+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8e2c480d-8ca5-43d8-b8db-ea2e35855cef", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58005 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:02.349769+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "45b39936-d3bf-4d15-b300-8f5ebc771a73", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58005 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:09.540515+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "22413d42-5524-44b8-909f-230925191d0a", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:09.550047+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "631774d2-e4fb-4412-88eb-54338cc824a4", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:09.560043+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "fb84f7aa-b892-4fc7-8a42-d2dee00f18da", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:09.607047+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "607f66f0-dc59-48d4-8d8f-07608cd6de9c", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:09.613043+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "02db8a56-e8f5-4592-a740-e322ea4e9a1a", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61666 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:09.639055+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "6f317e52-a453-4e7a-a4ea-eaa6ef859e9b", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61666 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:09.647582+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "50121023-202b-41e9-ac18-ab0fe26c3edb", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:09.654583+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "4c710666-3687-40e0-95f4-8a40a12e0d53", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:09.665581+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "18b242c0-f2af-4d25-a84a-4c5278c89e11", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:09.675583+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a4834ff5-1f29-4b31-b9f6-38c724e285fa", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:10.664055+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "27fe4aff-d9a4-475a-94e1-1ba8d1bd6684", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:10.674057+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "14f05637-a625-43b7-b07f-3cfc3ac27f09", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:10.695066+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3b8464be-3cef-4c08-92d8-8c0412220670", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:10.703059+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "f08a75d7-4cd1-4ec5-b333-b33e5673e7c9", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:10.728056+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "eb7c0362-18cf-467b-b0c2-bbc72d3a7679", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:10.738070+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "efa0015c-b6dc-4ab5-8825-16cdc602c90f", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:10.764586+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "52a827a2-cab9-44b6-b289-1847bfba65bb", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:10.772586+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "4153495b-7ca0-476e-a501-7901220911dc", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:10.784586+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3e5ca2ab-9ee1-4d74-b976-99bc5276b5af", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:10.796586+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "38779099-59e5-44ca-b3e8-7b30a48f1002", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50378 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:21.155157+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "f12248fe-ed86-4a1b-abc4-82cbd7d11dbb", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61329 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:42.694501+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "ab571da8-a1cf-40bd-8b3d-514cb359994e", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63951 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:42.704502+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "ede6a224-2b6b-4ec2-bc62-78570796bc23", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63951 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:42.782006+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "4dbd48f8-36ab-46e5-ab75-a4fbf9921524", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63951 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:42.792284+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c52b52da-49da-43c2-82cc-5056391bbd62", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63951 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:42.850823+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "581c1115-6eb4-44a6-a1c8-577ab7888c92", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63951 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:42.858824+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e68603ea-cb32-49a7-867a-7fa3fc5197cb", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63951 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:42.882824+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "5dd40a88-92f9-404f-b930-4bd1fb71ada0", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63951 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:42.890824+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "9d883b00-c5ba-4fba-821c-b6dbc6906cfe", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63951 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:42.922347+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "057d94f6-c19e-4cce-a677-d58b8c965670", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63951 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:42.930357+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "27564eae-6650-40e1-90da-9f5f6897f4b6", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63951 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:52.930067+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "17ffb77b-5fcb-4b82-a84f-a1a17fdd960d", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:53388 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:13:52.939594+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8cd19b2c-aaf2-436a-b344-72a415cf62ec", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53388 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:14:03.246367+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "136e2c9d-93cd-439a-b299-51d810504403", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50823 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:14:12.929351+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "27288a75-4ac2-4fc2-ae70-b74e51caf0de", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50235 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:14:23.239678+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "223ae1f9-08bf-440f-9817-0fe915f62020", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53279 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:14:32.939197+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "014409e3-8693-4448-b50a-5d4133a96506", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56223 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:14:43.267446+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a5486a1d-7931-4689-a797-febdc697a3a7", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57581 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:14:52.929614+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3b2a5d67-b31a-4211-b87d-7180584161b7", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55642 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:15:26.255982+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "17cb9782-fce9-47cf-a1cb-4b1594fe6e6b", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58176 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:15:47.111791+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "731cb098-5412-49aa-aff2-f1a12dd6d8ec", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58177 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:17:23.158974+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "f4eb4c5f-c373-4dc7-94f0-5ee813b4e875", "path": "/patient/dashboard", "method": "OPTIONS", "status_code": 200}
+{"ts": "2026-02-25T19:17:23.160972+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b4bf371e-28ec-44b2-9afb-912405e76cab", "path": "/patient/documents", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:52500 - "OPTIONS /patient/dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53652 - "OPTIONS /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:17:23.164970+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3440f710-6204-4087-ac2e-d2d315ed8993", "path": "/patient/cart", "method": "OPTIONS", "status_code": 200}
+{"ts": "2026-02-25T19:17:23.165969+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c8f788f5-71de-488a-bf0f-54c3e10b0fd8", "path": "/patient/prescriptions", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:65283 - "OPTIONS /patient/cart HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60456 - "OPTIONS /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:17:23.172973+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "4518e13e-231e-4e64-b49f-dd474379696d", "path": "/patient/dashboard", "method": "OPTIONS", "status_code": 200}
+{"ts": "2026-02-25T19:17:23.173975+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "46e97ffb-47e2-44ff-a0e6-b95bfc9c8711", "path": "/patient/documents", "method": "OPTIONS", "status_code": 200}
+{"ts": "2026-02-25T19:17:23.174971+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c8cc09c1-5b38-4c92-a17d-2ba6dc4def42", "path": "/patient/cart", "method": "OPTIONS", "status_code": 200}
+{"ts": "2026-02-25T19:17:23.174971+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "89aeff9b-8d97-4b87-b32f-569622590de6", "path": "/patient/prescriptions", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:52500 - "OPTIONS /patient/dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65124 - "OPTIONS /patient/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56825 - "OPTIONS /patient/cart HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53652 - "OPTIONS /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:17:24.332855+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "525f6310-d511-432e-8354-2d23a5727f07", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53652 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:17:24.344957+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "1baf4d58-a4b2-459a-9e52-6ff8f2cb15eb", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56825 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:17:24.355528+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "afed3d5d-91bc-46f2-8824-88390e49aeb3", "path": "/patient/cart", "method": "GET", "status_code": 200}
+{"ts": "2026-02-25T19:17:24.357525+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "552fbd0f-088a-40ed-a676-ad02dbd7c54a", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65124 - "GET /patient/cart HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52500 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:17:24.361528+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "5a49e149-a79d-4520-ac4d-843a3ec2b777", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53652 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:17:24.368524+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "72836492-39a8-4f7b-b60c-abf5ae433658", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56825 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:17:24.372525+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "4087dc34-9cd7-4e56-91b7-641a588d4130", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60456 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:17:24.414675+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "fa23f417-034a-4b4c-ba83-614bbf36c69b", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60456 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:17:24.427088+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "02697e6d-ca10-472e-92cd-bcec8a5fc51f", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60456 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:17:24.438087+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "34fe331f-96cd-4e1a-a25d-603ed1652137", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60456 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:17:35.247020+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "44db294f-bfa9-43b9-9942-53aa0f850cc2", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:62123 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:17:44.926882+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "d11933b6-398d-409d-87d8-f19f63dd84eb", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59804 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:17:55.309412+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e9d285ff-9a4c-41cd-8893-9861d94194c9", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52017 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:18:04.940964+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "6db13873-a791-415d-a382-d47c5022bd4c", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58952 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:18:15.242448+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "885c3fa2-98e1-49cf-8ecc-4b262975e486", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55004 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:18:24.943492+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7cb5e4e0-47ec-4812-956b-4045eaeef140", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:64971 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:18:35.239563+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "885739d3-cdb9-4115-86f4-e5e7759b8367", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54868 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:19:25.953923+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8d5ef33b-16bb-47c2-ba50-a909cdbadae9", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53499 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:19:47.318188+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "56e55ecb-e6c3-4c2c-b786-2223c38770ec", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53180 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:19:49.811910+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "24673e92-0d4c-453f-a4e7-d085bc862490", "path": "/patient/ai-chat", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:53180 - "OPTIONS /patient/ai-chat HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:19:49.819913+00:00", "level": "WARNING", "logger": "core.exceptions", "message": "validation_error", "request_id": "87434361-17d4-412e-8bc1-232ed0c768c8", "path": "/patient/ai-chat"}
+{"ts": "2026-02-25T19:19:49.820913+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "87434361-17d4-412e-8bc1-232ed0c768c8", "path": "/patient/ai-chat", "method": "POST", "status_code": 422}
+INFO:     127.0.0.1:55608 - "POST /patient/ai-chat HTTP/1.1" 422 Unprocessable Entity
+{"ts": "2026-02-25T19:19:54.329624+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8c8968ce-379b-4f49-aa95-e9517b90e2e7", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55608 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:20:04.633424+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a5100330-2431-4763-88cc-fc1c6ade40a9", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61506 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:20:14.935160+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2d43d567-6fe9-4887-a01f-bc6b8b66db2e", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:62938 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:20:25.246358+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c4d84c9f-2dc5-4798-905d-ff69042af8c5", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:49941 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:20:35.239653+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "82a98e40-5e83-4bfa-a5cc-2f73155f6cce", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:64148 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:20:44.922523+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b3802c45-5230-4373-9959-1fbaa9207b08", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52029 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:20:55.247131+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3ffcf07c-9d39-44d6-93c9-3232f1067287", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60882 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:21:04.938375+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "294050d2-20b8-4b36-8886-a3a772f14479", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65491 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:21:15.244489+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "09db0e62-a289-4e9a-83f8-68d798bb2935", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50281 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:21:24.926261+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b70ba8f9-4203-4328-a9b7-06badfb31eed", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:64190 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:21:35.247214+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "172ec98e-e433-4f95-8aac-c63ca938a0b6", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53172 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:21:44.933278+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a1d0199f-99c8-4fd5-b538-1138bf826efb", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60199 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:21:55.234348+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a98d96b5-0237-455e-b28a-418acfa26f5f", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63189 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:22:04.926154+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "bb9e1701-62cf-4143-8fcc-c0d55c6c23bf", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65523 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:22:15.238952+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "1667c603-d660-435a-ba72-0ae727a550c8", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56123 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:22:25.133520+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "085a41f2-ffb0-4d98-b9a0-e28b123e2862", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60023 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:22:35.234710+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2b9669a9-8e3c-4f9a-aedf-8d22708f9931", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50848 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:22:44.921915+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "bb7e5ec3-72ca-4f7b-9cf6-86b6f319b8fa", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52121 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:22:55.240161+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "d757b54f-1e10-4069-b79d-41588f94d11b", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60421 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:23:04.936486+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "620f07a6-6ebc-45bd-aaff-6f23a198e0d6", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54229 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:23:15.243289+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "f36366da-6945-412b-ab63-841058a317b0", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:49908 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:23:24.934289+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a28bbbc9-06f7-4fec-a637-a6b1e80b727b", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50448 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:23:35.235870+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "57960627-fe5f-45fe-9ccf-81130e3841fe", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:64427 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:23:44.935682+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "12e20d9a-dd26-4df2-8097-a51eabaf2ddd", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58931 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:23:55.239963+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "cc6b750e-aa50-4e11-aeba-5008707404dc", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:50394 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:23:55.249144+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "695a8b81-b3db-44d0-9bb2-a462b76f424d", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50394 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:24:04.934659+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "27e7ad23-fae2-490e-a340-2498be83744d", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63231 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:24:15.246394+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "9e388e2a-c7cf-4803-a0c6-a47853491d5b", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52821 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:24:24.930032+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "929989c9-8822-4560-bac9-a3d3f3ac15c3", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58850 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:24:35.249856+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "f6f293ae-8aba-4cf5-a188-6e0d0526451c", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55836 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:24:44.950863+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "f4b4e19e-c1f4-4040-aa91-cc15a53ddef5", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61112 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:24:55.245396+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a5861747-039c-4772-9368-4e5bb3b17aad", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61884 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:25:04.931077+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b1bf0efc-6b01-4fa1-8d29-28a0ce93a3a8", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:62499 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:25:15.244871+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "d0c6b3c1-be58-40d3-bc10-004e7748ab3e", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:64974 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:25:24.933954+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "f877e06b-d92d-46cf-9388-4117b2ba8abe", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57339 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:25:35.252406+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "0b752e9f-7174-488c-9950-c1fb39c468b1", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:64154 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:25:44.919390+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "ab2cd967-2861-449f-8df7-bb3bcfc400d1", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:49285 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:25:55.237058+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "6a631b77-b54b-41f7-ab00-8760cc755e58", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63125 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:26:04.926864+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "f2e1cc8c-b174-4eeb-a287-2887fe30d13f", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52854 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:26:15.230402+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8670dfeb-b3e2-4d88-8355-15aa18c88374", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52169 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:26:24.923361+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b7a08373-2c8b-438e-bf72-b9bbf8f98c86", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:64400 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:26:35.244272+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "831edd4a-19d9-46b2-99aa-56a4807462d2", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:62110 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:26:44.931115+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7368b6ea-307c-40d5-aa4f-591ee5021086", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63665 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:26:55.235199+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "48412cbd-2723-4c4c-bafc-66b70aa4e112", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60006 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:27:04.924406+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "06d4d004-662c-44b0-b362-817a3be74802", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:64989 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:27:15.240541+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "5f9854d4-6fb1-4d6b-bf66-85a3457ccaec", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58589 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:27:25.950163+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "02ba953f-09a9-46f4-8ae5-e337b56d400e", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56357 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:28:26.255831+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "93ebf509-d9a7-42ee-8e76-e68d778d5706", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53278 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:12.769794+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "9980138f-8428-4280-98b9-1fe9a62a5111", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54673 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.566901+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e66861ee-d135-4590-9f43-4479ccbe23d9", "path": "/patient/dashboard", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:54673 - "OPTIONS /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.573902+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7a77bd40-8eed-4788-8ad0-bf19e0fc34aa", "path": "/patient/documents", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:54673 - "OPTIONS /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.577901+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "48654bf2-539e-45ab-9f80-d4124fcecaef", "path": "/patient/cart", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:54673 - "OPTIONS /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.583899+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "453dc71c-99e5-4f37-8243-0631e7767a90", "path": "/patient/prescriptions", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:54673 - "OPTIONS /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.586899+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "9ed90ba3-6af8-43ab-87c9-dbf848b19ff4", "path": "/patient/dashboard", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:54673 - "OPTIONS /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.593159+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "1dd061f9-5aa5-4b79-b53f-3a0d5df1dfa8", "path": "/patient/documents", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:54673 - "OPTIONS /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.597901+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "5d302a5a-5e7f-4d81-976a-2e1c58c75338", "path": "/patient/cart", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:54673 - "OPTIONS /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.606899+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c2d33237-d8af-4acc-b14c-8ddc98bf54b9", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54673 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.609901+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "04b5f467-176d-480e-a093-9958ad0fbb5b", "path": "/patient/prescriptions", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:54673 - "OPTIONS /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.620983+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "de6e812a-d3f8-4638-9c60-bc8c0be671cd", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54673 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.630900+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "17d21aea-b844-4dfa-b4a1-7b80b35f56ab", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54673 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.639898+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e7f07d13-e11e-46a3-b283-5f01620ea200", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54673 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.647914+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "721d0a95-a7b3-400c-88d8-62989a09ecdd", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54673 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.655904+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "22256eb8-19af-4eac-93e0-eca98c737088", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54673 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.669136+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "86b7f367-5b9f-41c6-9a12-cb3d00f82e07", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54673 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.678127+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2e75bf87-cec5-4373-8ab5-1e1bc0120bdf", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54673 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.687134+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e3e1ac49-e0e2-4a21-96db-ff0fdf5b071d", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54673 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:14.695127+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a09f113c-5a38-46ed-b822-dd872368e4a9", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54673 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:24.938412+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "41f671c3-96fb-4c20-91ba-668bec7aff2c", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63972 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:34.929106+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7bd255d9-4c8d-4dc6-ab18-e4de5de82ecf", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54778 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:44.922783+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "70afcceb-feaa-4e9e-91df-4b514180865d", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57981 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:29:54.927240+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8a895da2-ba3c-4368-bf76-67aa0b0bacf0", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:64116 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:30:04.933650+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "6b1c4b1d-3147-45b5-995d-bb73f19ac385", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52411 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:30:15.239947+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3f1a0250-5c26-465c-93eb-57e5efe0a21e", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53381 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:30:24.928204+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "fd275c2a-5148-4db7-b84f-0f0ff26ed370", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55369 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:30:54.415698+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "227bc383-fd16-46d2-ba98-847b8ea70ed9", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57124 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-25T19:31:04.994579+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7fef8cbc-0d32-4b83-8c37-67b295d10c3e", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:62168 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:38.686388+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "ede45a40-6a36-4ef8-9178-9ffccc251d3d", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:56049 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:38.705349+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "1506453a-7d4e-4a34-89e4-c8512abcf9a1", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56049 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.862376+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "40e75fed-21fb-43bc-902b-778401fb19bc", "path": "/patient/dashboard", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:59999 - "OPTIONS /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.864376+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e11d77c2-7d13-4f6f-9061-8ff36150b972", "path": "/patient/documents", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:59999 - "OPTIONS /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.868385+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7290c69e-d5a5-41d7-8767-3e71d33dc7a3", "path": "/patient/cart", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:59999 - "OPTIONS /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.872801+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7f1737c2-881e-484a-9005-31007c19850d", "path": "/patient/prescriptions", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:59999 - "OPTIONS /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.875840+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "84973226-63fb-4505-8e00-0d479d28e2ca", "path": "/patient/dashboard", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:59999 - "OPTIONS /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.879806+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2650f33a-e100-42c7-ba70-971ad725c97a", "path": "/patient/documents", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:59999 - "OPTIONS /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.890714+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7ea51e8a-0e12-4b2d-8b95-a34f2922b76a", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59999 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.894719+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "af2c148b-e2fd-480f-81d0-52ef45e7c933", "path": "/patient/cart", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:59999 - "OPTIONS /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.902398+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8034eab4-6616-45e8-94ad-7e6afb9b3356", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59999 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.906047+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c45d3e27-4ab5-4039-9f1e-f166ce7b892e", "path": "/patient/prescriptions", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:59999 - "OPTIONS /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.914003+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "258623a4-517a-49e3-9508-5e8e69886bb3", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59999 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.923003+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "169576c3-f62c-4afa-82c0-461316efd059", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59999 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.931298+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b468de69-dc7f-4506-8053-66fa1b3f7239", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59999 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.939824+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c6a74cb4-fb7a-4366-9708-007132630d93", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59999 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.948839+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "ac444338-1ef4-4bd4-a153-e6c629969b4b", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59999 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.955021+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c6a04dd9-ee04-4f87-9187-20ec67a3d321", "path": "/patient/documents", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59999 - "GET /patient/documents HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.962328+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "ba438f3b-1643-46d7-ad5a-bcfe3f10a7b6", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59999 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:39:49.973010+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "03a43fe9-7b80-469c-878f-584084136614", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59999 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:40:00.615607+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "be2d32e2-4fa0-420b-9967-4a14ba3d60e6", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:64334 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:40:10.928488+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a6f55cda-1777-45d3-b4f9-1a1fc928ef46", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60859 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:40:20.611779+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e15ba9d2-fd92-4298-93d4-900ebdd9405c", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58633 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:40:29.712673+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "86f9d78a-c134-42b5-bd39-0f151cb7301d", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60882 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:40:39.374844+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e164366a-d62e-43f1-bc3f-a02e714e0942", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61612 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:40:49.682267+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3c407420-3c60-421c-9151-e0e15899ed83", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63443 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:40:59.384577+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "00108b24-0e8f-43f9-b410-c3a35788b2d2", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63994 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:41:22.702982+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "5062e54b-ea6f-4771-a6f5-9a90c79babd0", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53714 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:41:27.419837+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "db5ed7f2-e761-4d75-8b30-3a3c9d3dd836", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53714 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:41:27.434274+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "80749868-b1dc-49fb-8914-27815ac58c34", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+{"ts": "2026-02-26T03:41:27.434274+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e7ea67c8-a7db-405a-9b00-050fc46fe82f", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53714 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49355 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:41:27.443960+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "674963c2-abf3-4291-b8a2-674437cf6c42", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53714 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:41:27.448942+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "49d67449-cc91-4d75-98d3-ac75f2c586c1", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:49355 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:41:27.455568+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8371be1d-2ca6-4f9c-a197-de39bcc179ef", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53714 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:41:27.546450+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "d246a34d-e6d8-4c07-a307-dc2002150342", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53714 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:41:27.564355+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "d9525308-74c3-4004-a8a4-8a3e2bfadfe4", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53714 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:41:38.396307+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "caa5e1b5-4417-4d1a-87c2-afc6cb1144f0", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53277 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:41:48.694456+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "dbbf8adc-1469-48dd-b8a7-706be35b8178", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59639 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:41:58.387482+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7473d216-adc6-4239-ac43-131e25edc0bf", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:51607 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:42:08.696172+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a33f85e1-820d-40f7-b14c-68f3cbe9f3ee", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56405 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:42:18.394844+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7ee1c1ab-03f3-4165-b19e-55c7cfb778ec", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65197 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:42:28.697597+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2383da4f-24be-4cc1-90e3-cfb6583e48f7", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61588 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:43:22.414545+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "1bfcd291-d742-414a-bffe-640006681f48", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63757 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:44:22.711226+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e2dacbe2-a3e7-4e7d-8a4d-a07fa15a75ad", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53276 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:45:22.405147+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "0d0b1c15-6fea-4e8a-8411-cc12f448fabd", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60966 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:46:22.713992+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "75ac80da-c09e-41df-af45-4237e7e9e9c6", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63740 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:47:22.390498+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "5137ff84-2a0c-4c63-ba1b-4ba21dfbdf8c", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:62847 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:48:22.696563+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7ceb4000-f10e-403e-85b6-594dfdd9e69b", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65306 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:49:22.394529+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "ce179df1-4283-40f1-8680-337934f1c03d", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61479 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:50:22.773504+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "daaec6d3-9e28-4cf7-afef-9a03844ac69b", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:63791 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:50:22.780145+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "615442be-7527-42c8-ba69-d7071a6f300b", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63791 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:51:22.399615+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e2fe5870-4d10-45b7-a8be-11cbf0531520", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56060 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:52:22.713816+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "26cb9c57-30fe-4f95-aac7-e8620a6932ae", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54509 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:53:22.391519+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "1d0bfc4b-3a39-4f1a-954a-497179f45adc", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52891 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:54:22.722855+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "d33eb9d9-28b3-4222-a84d-d03933cd29df", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57226 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:55:22.395024+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "ff90ea22-613a-4e37-9be7-366a187f3acf", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53078 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:56:23.137895+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "62e72203-b661-4baf-b8c8-03a7c824432f", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58338 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:57:22.461037+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "76bfc725-7f15-4f55-8837-5133d1935e37", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63496 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:58:23.117894+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "136dab21-15f9-4ec2-ad37-747bf1484780", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54411 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T03:59:22.562783+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "abf303c2-59fd-4a35-ab1c-291681370689", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63114 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T04:00:22.710509+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "5f83488a-84b0-49c7-bca5-c433d3317490", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61765 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T04:01:22.381438+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2ef6a2cd-a000-4fed-a417-e204033365c9", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:54559 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T04:01:22.388281+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "990f7479-3a36-4121-baec-8b0092af92ff", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54559 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T04:02:22.730500+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8f7f471d-46ca-4150-916d-f2514915fe1c", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61461 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T04:03:22.395574+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "fc09d7be-17ec-4550-b78f-8fbd8201a3c3", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:62466 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:21:13.390480+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8bb82211-3602-4e55-958d-71df7c494c12", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:62326 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:21:13.399301+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a113be45-e723-47ad-b1a2-db1d836424f6", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:62326 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:21:22.550511+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "763a9bff-09d0-42fb-87ec-e317bd7c124a", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50996 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:22:22.528198+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "37aa8e3b-5d9b-4f53-a3af-51b155b7f097", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50507 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:23:28.454867+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "1a50a4ae-4963-4169-8a91-e91f890c3d1e", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55652 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:24:22.220161+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e99a6fa2-89d2-49c8-86a6-9cdcd9d85d48", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57633 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:25:22.525916+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "73f34134-90bf-4572-bfad-555cf2e8398a", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58840 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:26:22.241335+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "d59c6b9d-f515-4d3f-8387-35cfa6341c0d", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63208 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:27:22.546080+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b353908f-ab87-4863-8bac-6ddff7ba6560", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57584 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:28:22.229155+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "d4a5dae5-0209-48c9-b778-f874575618c4", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55248 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:29:22.536207+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "cb355376-a533-4cd8-b514-ce51cfb31e36", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63862 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:30:22.238284+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e09471c6-1753-4419-a66d-7ec78f7aec52", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65090 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:31:22.541153+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "48290cbc-e626-49c0-8b76-835e753d6df2", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:54720 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:31:22.552292+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "378ad9d8-4b19-422b-879e-a6cd7671b146", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54720 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:32:22.250760+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "781b04d1-1299-47b7-a4ac-1c5ca2d910db", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53628 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:33:22.556744+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b42c9762-3dc7-46e8-87cc-7d0a1376b494", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53996 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:34:22.227191+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8bbcde22-d905-4180-b36f-204e6d1f739d", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53659 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:22.534066+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "0febebe5-3599-4105-b2b7-d746bd4f8f5c", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58228 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:47.226495+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "f17ec35c-7fab-4e8c-82df-42e9e008668b", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56956 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:47.598246+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "53c4c51b-9cf2-44ca-9424-a688d6542c81", "path": "/patient/dashboard", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:56956 - "OPTIONS /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:47.601756+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "521009ab-49f1-4f58-81f4-22335a7562cf", "path": "/patient/prescriptions", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:56956 - "OPTIONS /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:47.606756+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "66c05152-f7d5-4694-b0b6-1186a40b92ef", "path": "/patient/cart", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:56956 - "OPTIONS /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:47.615278+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b192aaf8-f83b-4453-bdf5-209992588dec", "path": "/patient/dashboard", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:56956 - "OPTIONS /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:47.619347+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e222dc5d-d31a-4798-bb6f-1301fd33b4cc", "path": "/patient/prescriptions", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:56956 - "OPTIONS /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:47.623766+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2fae0bef-64d3-4ea3-8e6a-8e3113169503", "path": "/patient/cart", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:56956 - "OPTIONS /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:47.631485+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "0a32bb07-5736-4ca4-a9f2-f243ca070688", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56956 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:47.643718+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a0d1825c-27a8-433f-8dfc-762f09879084", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56956 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:47.653340+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "bb46ece0-be76-454b-8557-e62c596aa0f7", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56956 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:47.664056+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "cf257fdf-75d4-494b-8ac2-aee17aa34a6f", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56956 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:47.674645+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "af54b7b0-7c0d-4ca8-afe0-3f73181eabd2", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56956 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:47.684207+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3d9a8d88-6e2a-4d32-b83c-3baea7075d2f", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56956 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:47.693713+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c029c377-9cf8-41d2-9434-0812ed4e96e5", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56956 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:47.702249+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "5140588f-a269-46ad-9585-7d089e8c6cad", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56956 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:49.483046+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "fb9dfd27-1aee-4836-8446-c91cd056e9f3", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+{"ts": "2026-02-26T06:35:49.485068+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a0b3def0-e529-4fd0-83dd-475d2aec7a7e", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+{"ts": "2026-02-26T06:35:49.488048+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "4987ae49-6069-4f0a-9c68-ba8e0b2ea77b", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56956 - "GET /patient/dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55991 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51715 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:49.501132+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b5f64ab0-7696-411e-a9de-79f7cb4da3f0", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55837 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:49.537730+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a853be6c-5893-42a9-b52d-b50e7095875c", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59973 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:49.554225+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3f68aabc-99c9-49e3-ae69-9cebe36ecccf", "path": "/patient/cart", "method": "GET", "status_code": 200}
+{"ts": "2026-02-26T06:35:49.554861+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "db82062c-880d-4f65-ad35-1541aff3f7ae", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56956 - "GET /patient/cart HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52729 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:35:49.562563+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "691077c7-97a4-46a8-b9da-082a90b232c8", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:51715 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:36:00.536747+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b388e950-4b14-4d56-aee9-29f5cce69a53", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58598 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:36:10.231934+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "cbade0f5-c3c8-49e8-aed4-3f363721f63d", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58057 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:36:20.532873+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "fd5f4dd2-fae3-4ab3-b2cd-3bec9c57f31f", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55432 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:36:30.230989+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "14604e71-0896-4ffc-9519-d21b4e5e9c8a", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60256 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:36:40.535511+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8c48e975-90bd-411e-b2f5-2cb6f32495c9", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:51809 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:36:50.229666+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "f03559dd-adc1-4938-b50b-743197eb2dcb", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57148 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:37:00.549030+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e933dd82-0916-4051-b60c-e53fcbfb0456", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61239 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:37:10.231698+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "db33739e-11e0-401d-870e-395fc8c9c69f", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54571 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:37:20.529448+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "ba73332c-d2b7-4f34-9cc7-4613e34f4245", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50227 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:37:30.217244+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "ab77bec1-d1e8-4ea4-a60d-50d8b8746a1c", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:49614 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:37:40.540604+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "6c042259-a7f7-4241-9720-fb9283f6d9ea", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58622 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:37:50.310787+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "016501b5-a646-448f-8ee6-84d3108e809d", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57451 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:38:22.579744+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e19f935d-74ce-4884-95fe-f9b92f934f4d", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59384 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:39:22.239685+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3d7ed9a3-e216-4b51-90da-0e79b7755585", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53973 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:40:22.544949+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "bcf99599-f05c-4a7a-b09c-eb05da56d3cb", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:51721 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:41:22.231174+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c967a0f4-96c7-485c-a545-c609c485cbbe", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58016 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:42:23.063968+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "552cc75f-0ab4-41fa-a3e1-a6ade1ffd6bf", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:53060 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:42:23.082258+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "fde1f458-01a8-4f6b-a9f9-a70adf734dd2", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53060 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:43:22.236997+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "bd0f3e7d-7c32-4448-bf45-0156bd631460", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53969 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:44:22.555253+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "181c247f-744a-48c0-90df-dc329abc962f", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50496 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:44:30.465217+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b75d123a-7c4b-4692-91db-aa24c162833d", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:51223 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:44:30.473902+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3e34f7e3-279b-4291-a85b-49c195f44af5", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:51223 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:44:30.481833+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b9411a76-0d3f-4f3b-bed6-902c10e0983c", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:51223 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:44:30.489991+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "696daf64-d6be-4e72-8384-ab4b99bc0d27", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:51223 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:44:41.221234+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "6b1c3460-8370-4be2-a3a7-08fe2cd82d3d", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:51725 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:44:51.226375+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "0c093efa-a208-465a-a5eb-38b95986b080", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:62535 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:45:01.228148+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "33723724-2f5a-4be5-ad24-33f4b06e38aa", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50636 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:45:11.528367+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "99f22062-3c19-4ef5-9d3a-28097beff35a", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65170 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:45:21.216756+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "37c9317d-5ece-462d-8225-bbe3a9efcc86", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59696 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:46:22.551062+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "686c7791-ffe5-4f4f-beab-79831f0a302a", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52548 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:47:22.232849+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "9b934b1f-42b2-4808-90f3-3eab0679eb3f", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60808 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:48:22.551536+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "5a915555-9d4f-48e2-9cbe-5c812a07c996", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:49251 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:49:22.247672+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2e12ccc7-5760-43c7-874a-b7aa5835d030", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55415 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:50:22.523809+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "6f4ea044-03c8-4a29-b732-550761c94a83", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58528 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:51:22.566679+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e191662d-ea9d-436f-9647-87fe21fcc766", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:49862 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:52:22.231636+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "83206075-00fe-4ed2-b480-b31edf332eed", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:51650 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:53:22.538954+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2c2c0dec-2437-4238-b2da-491cbdac14ed", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:49555 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:53:22.549725+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3e44040a-049a-4529-a412-fc71e978ea87", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:49555 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:54:22.219507+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8f0084a8-137b-479c-8d8c-481c9e772df0", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53090 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:55:22.562512+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "6e6a55a6-79b3-47b3-a3fb-e7840ae3d5f9", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:51665 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:56:22.238186+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "bbd70e31-0e71-49b0-bc88-3f33200490ec", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56929 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:57:22.550990+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "868d6494-eea8-4c6f-8fc0-77e008cb68b1", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59879 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:58:22.250269+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e2476f04-3f05-42e8-9b1f-6d81f2506c40", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59032 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T06:59:22.541452+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b6cbe860-95b2-459f-afed-c1f083095b28", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57978 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:00:22.231046+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2a8af2fe-1d5c-4e4b-badc-b03cfe2b363f", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52910 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:01:22.548838+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "d6083370-9e2a-43d9-93f0-3b9fdf6b1ed0", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65244 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:02:22.769643+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "271e2de3-7e4e-4cf8-b16a-d60bb1f47e8a", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52152 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:03:22.218306+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "96d07415-a04c-4aa7-9e96-809d757b4a33", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61183 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:04:22.538391+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e0c200a2-8aaf-4223-8fdb-87f1431b0866", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:59534 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:04:22.570657+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "63aa5f66-bfc2-44a1-b7e1-13eb42d463c1", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59534 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:05:22.249243+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "31058f43-7609-43f8-9929-d956ddbf32fd", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65169 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:06:22.547042+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8ab50527-5cda-4102-8050-dd727956c07b", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59497 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:07:22.237913+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8dbe064d-f010-4223-98a8-9ec05729140c", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:53275 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:08:22.532221+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b1832d8d-2115-4780-aff3-d113eca2d915", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63713 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:09:22.231021+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2aad43d9-0e79-454c-be21-8b94e7bef45a", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52245 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:10:22.553440+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a1d058f9-8430-4bc9-b15d-97efedd2f682", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63374 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:11:22.251062+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "bba3cdee-90c3-4f8f-a9c1-034e57f5b5c3", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65265 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:12:22.545869+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "aa5beebc-1dc4-40b6-a579-b03c9fe5f763", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59185 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:13:22.256351+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "438237a0-11c8-4974-9fee-da90515116da", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58709 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:14:22.546301+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8614ea1f-85d5-43be-8d22-a0403f54638d", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52464 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:15:22.225551+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2a2245f5-a7fc-449d-8c32-d3b52ed6f643", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:59977 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:15:22.233977+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "4e11f217-d163-4319-9af6-dfeb2c811119", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59977 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:16:22.549170+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "25bd7b79-4657-4d10-b712-df05d341c1f6", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50945 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:17:22.246533+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "91da6907-c48d-4829-beb0-1284e08da566", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59115 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:18:22.554187+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "dbeada34-fb51-46dc-890e-ef36daa2f7b9", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55173 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:19:22.249452+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "93ef3c2c-4033-46be-8542-ef55a3183e1d", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:62075 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:20:22.543526+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2bff900c-e513-4fac-80e5-cf9fc80f167e", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:63756 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:21:22.273934+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "ff38b1cc-f4f9-47de-ab9c-a04f58d02935", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65221 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:22:22.558483+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e81bb9b2-0d0c-43da-a9f3-9b85ad3527de", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57583 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:23:22.239650+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "44792c7b-4894-4d10-9039-c73f4647a731", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58860 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:24:22.549887+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b6de32a7-bff4-4e28-a337-326fa3d9ee5a", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56062 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:25:22.540496+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "de1f9d66-40ae-45a1-ae3a-63b63600803e", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:51978 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:26:22.252612+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "4e8b60a7-0c53-4517-8166-e4aa37022b52", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:64808 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:26:22.267685+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8f50cf1f-1170-483e-af12-9dbb66d60969", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:64808 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:27:22.784522+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "29656d98-bd31-4035-8458-7d78a816d276", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58691 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:28:22.237672+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "57769376-306e-437f-90bf-0bfa180d750b", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:62611 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:29:22.529930+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2a71d9d8-df64-4c96-b17d-7c927e5d5d35", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58311 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:30:22.231938+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "9b7232ae-1be7-455c-9baa-e4761ae502a5", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65215 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:31:22.558610+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "48d603d1-b0cb-489c-99e5-540216679226", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60908 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:32:22.241621+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "53d68a86-4afb-4a7f-b875-0d877d050c80", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56990 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:33:22.550922+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e61071d3-3126-49b7-8529-09875b00a37d", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50922 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:34:22.233180+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "80346ed8-72fd-4bb5-8098-f397009efe72", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59296 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:35:22.552959+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e6867088-fc98-4cdf-a6ad-f9ea150e3881", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55007 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:36:22.233605+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "0ef1cede-19b7-41cf-bc7c-97f037dae4bf", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60048 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:37:22.528837+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "5ea83647-7fd5-4b4a-a9ef-0598ab06a098", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:51363 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:37:22.538094+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "f98ed82b-fccc-46ec-9e7a-e3de570f3e0e", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:51363 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:38:22.237070+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8956cbc0-18e8-4c03-bab1-98be7ce13f8b", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:58681 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:39:22.533272+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "39c7f064-dc5f-424a-b2a3-a591d7b69cb9", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:64029 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:40:22.241057+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e0dbd448-a84b-4c40-abff-00bd32165850", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54090 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:41:06.545646+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c1df0d62-70e4-42b7-85c9-97850c5bf426", "path": "/patient/dashboard", "method": "OPTIONS", "status_code": 200}
+{"ts": "2026-02-26T07:41:06.548167+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "cdd02e22-873d-4cb0-917b-743288f5d27b", "path": "/patient/prescriptions", "method": "OPTIONS", "status_code": 200}
+{"ts": "2026-02-26T07:41:06.549182+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "3fcd9c3a-dfc1-4beb-870e-29e9f777fa96", "path": "/patient/cart", "method": "OPTIONS", "status_code": 200}
+{"ts": "2026-02-26T07:41:06.551184+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "0ca2c988-334f-4b6d-b30d-b769d54f575c", "path": "/patient/dashboard", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:54473 - "OPTIONS /patient/dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55999 - "OPTIONS /patient/prescriptions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59920 - "OPTIONS /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:41:06.555750+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "fb9afa73-640b-476c-a316-22966a0a484b", "path": "/patient/prescriptions", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:64189 - "OPTIONS /patient/dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53685 - "OPTIONS /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:41:06.564801+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c1ce3920-8ee0-4a78-9e12-86061b41fc35", "path": "/patient/cart", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:54473 - "OPTIONS /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:41:06.573948+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "af4ffe39-723c-4d33-adc6-6cd2ca768328", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55445 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:41:06.585179+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2b59454b-cfcb-48da-98e1-2d82cf60f4cf", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+{"ts": "2026-02-26T07:41:06.586178+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "11b8f77a-8c2a-4ac2-8122-802c35ec9b57", "path": "/patient/cart", "method": "GET", "status_code": 200}
+{"ts": "2026-02-26T07:41:06.587202+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "8b3960ad-da9a-4643-828c-42d126a0b636", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55999 - "GET /patient/dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64189 - "GET /patient/cart HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59920 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:41:06.590859+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "25f76d40-491e-4113-b24e-d9b3d9a476a5", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:55445 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:41:06.605072+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "5a900291-d3dd-40a5-b1ad-54f48d9b547a", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+{"ts": "2026-02-26T07:41:06.606074+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "cd7e377f-f316-428d-8199-4648bf0ed1ae", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54473 - "GET /patient/dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53685 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:41:06.610065+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "0685b3aa-76f2-4ce4-ae6f-2be2a586f57c", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59920 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:41:17.554073+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "553ce221-eafa-425e-83b4-5efaba119f1c", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57367 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:41:27.237234+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "4d0a32a6-042a-4cd5-8d46-c87b4a338ed6", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50927 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:41:37.528283+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "6114471c-96ed-4d22-ba72-42b1d3b8dc73", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59282 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:41:47.234862+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "983adcd8-4cc6-4979-9ccb-91dafd977f05", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:51809 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:41:57.532090+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "db67dc9d-600f-436b-a19f-bd96e8395679", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:49692 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:42:22.234264+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "d75b5373-040d-4f8a-ba93-daae7f95e2c8", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:49653 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:42:55.637234+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "fb161d37-4ca4-418a-a628-143a1a809ebf", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52461 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:42:55.641459+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "88d2c3fb-6141-4666-930f-e92cd9a92a6d", "path": "/patient/cart", "method": "GET", "status_code": 200}
+{"ts": "2026-02-26T07:42:55.642974+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "34df5d47-e982-490f-9064-dccf852c868a", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60564 - "GET /patient/cart HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57039 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:42:55.648086+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2fbfe6cf-58bb-42cb-8910-9dd1f40e2b1b", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50675 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:42:55.681795+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "4b3417de-2d74-40e1-bf81-0b09b3eebe32", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:52461 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:42:55.690114+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "9331c699-4013-4e4d-ace4-3f5d5f767bf8", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60564 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:42:55.693016+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "fa5af31a-4ced-4a75-88e8-edf5be1ae0db", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57039 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:42:55.697206+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7485c6bf-c4ac-4362-ae58-dbd6c46a12d1", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50675 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:43:06.225885+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "79591657-34da-47b2-a614-493ef5b3aa6c", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56419 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:43:16.521090+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "9b3349e4-7f87-4e15-934f-ffdb66f1b7ac", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:61072 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:43:26.222064+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a53e49d1-65c5-45d5-a74d-4428f4acb194", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56982 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:43:36.531999+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "096910b3-700d-4073-b59b-57848bb1deef", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:59655 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:43:46.219756+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "a15ace81-cba8-4fd4-a1a0-085f64d0b6d1", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60035 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:48:08.612624+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e514bedf-8504-4110-94a0-17ab965f5aa0", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+{"ts": "2026-02-26T07:48:08.616442+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c47f99bf-cbee-4532-8481-f3bc141d0f72", "path": "/chat/notifications", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:64665 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63892 - "OPTIONS /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:48:08.637161+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b98c158a-6af3-4420-b6f8-bf92fd211fe7", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+{"ts": "2026-02-26T07:48:08.639621+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "1b10cf40-481d-4fac-a874-eb628027f17c", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+{"ts": "2026-02-26T07:48:08.640713+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "5e6dc965-2d37-4a47-a45b-2904eea62a32", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65516 - "GET /patient/dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57643 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56264 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:48:08.646808+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "f8fa91b2-0706-40a1-b818-fbd66246faf4", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:64665 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:48:08.661843+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "d1c5c5a1-6b39-4623-87b0-2aa2629f3494", "path": "/patient/prescriptions", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:64665 - "GET /patient/prescriptions HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:48:08.667312+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "12fad14a-a08f-4326-b4e0-bc48621e12bd", "path": "/patient/dashboard", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65516 - "GET /patient/dashboard HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:48:08.670662+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "1833ec3b-8bb5-4621-81e4-e9cc008d17c0", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+{"ts": "2026-02-26T07:48:08.672684+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "e8d0bfbd-6ecf-43ad-8eca-0ffb492507e4", "path": "/patient/cart", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57643 - "GET /chat/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56264 - "GET /patient/cart HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:48:19.236316+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "ee52fc4b-a173-4c93-8385-8c3620975238", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:56984 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:48:29.544771+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "79917785-6e4c-4173-93ea-547e74aeee55", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65054 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:48:39.227511+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "b56a1980-2d1a-4f8c-96b4-cfeb6f1f48ab", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:49523 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:48:49.530633+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "6f5134bc-7aab-4e52-8386-bcf308e61f9f", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:50776 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:48:59.223406+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "0e210c30-053e-460e-8841-e6e0e05c460e", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57757 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:49:22.531793+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "2037ae55-e4b3-4fa8-ac52-edc8cb59f6d7", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:65098 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:50:22.222895+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "db4f4952-1376-4508-a487-ab7d7dc55669", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:62212 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:51:22.534031+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "da225431-e25c-470a-abdc-2847c4df3c8f", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54162 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:52:22.224265+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "538d3170-6ea0-4a0b-99e9-11587ff607e7", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:60453 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:53:09.411027+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "c4543a9c-b74d-4acb-abc3-f955ec69a290", "path": "/auth/register", "method": "OPTIONS", "status_code": 200}
+INFO:     127.0.0.1:54349 - "OPTIONS /auth/register HTTP/1.1" 200 OK
+{"ts": "2026-02-26T07:53:09.459592+00:00", "level": "WARNING", "logger": "core.exceptions", "message": "validation_error", "request_id": "4a1dc287-83ff-4e0e-98ed-e163cad93303", "path": "/auth/register"}
+{"ts": "2026-02-26T07:53:09.460607+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "4a1dc287-83ff-4e0e-98ed-e163cad93303", "path": "/auth/register", "method": "POST", "status_code": 422}
+INFO:     127.0.0.1:54349 - "POST /auth/register HTTP/1.1" 422 Unprocessable Entity
+{"ts": "2026-02-26T07:53:23.019888+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "7b7578dd-eb20-4bb6-b35f-55017998987f", "path": "/chat/notifications", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:57108 - "GET /chat/notifications HTTP/1.1" 200 OK
+{"ts": "2026-02-26T16:10:55.631680+00:00", "level": "INFO", "logger": "core.middleware", "message": "http_request", "request_id": "6b0f4dfa-d735-4238-8dac-23dd06954982", "path": "/", "method": "GET", "status_code": 200}
+INFO:     127.0.0.1:54139 - "GET / HTTP/1.1" 200 OK
