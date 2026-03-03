@@ -22,9 +22,15 @@ class WSPrincipal:
 
 
 def _extract_bearer_token(websocket: WebSocket) -> str | None:
+    # 1. Check cookies (HttpOnly)
+    qcookie = websocket.cookies.get("access_token")
+    if qcookie:
+        return qcookie
+    # 2. Check query params (fallback)
     qtoken = websocket.query_params.get("token")
     if qtoken:
         return qtoken
+    # 3. Check Authorization header
     auth_header = websocket.headers.get("authorization")
     if not auth_header:
         return None
@@ -96,7 +102,7 @@ async def signaling_ws(websocket: WebSocket, room_id: str):
     try:
         while True:
             data = await websocket.receive_json()
-            await manager.broadcast_signal(room_id, data, websocket)
+            await manager.broadcast_signal(room_id, data, principal.user_id)
     except WebSocketDisconnect:
         manager.disconnect_signal(room_id, websocket)
     except Exception:

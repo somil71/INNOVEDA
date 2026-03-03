@@ -1,17 +1,23 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { Activity, LayoutDashboard, Stethoscope, Shield, LogOut, Menu, Bell, Search } from "lucide-react";
+import { Activity, LayoutDashboard, Stethoscope, Shield, LogOut, Menu, Bell, Search, Globe, FileText } from "lucide-react";
+import AIChatbox from "./AIChatbox";
 
 export default function AppLayout({ children }) {
     const { user, logout, role } = useAuth();
     const location = useLocation();
     const [sidebarOpen, setSidebarOpen] = useState(true);
 
+    const dashboardPath = role ? `/${role}-dashboard` : "/";
     const menuItems = [
-        { label: "Overview", to: `/${role}-dashboard`, icon: <LayoutDashboard size={20} /> },
-        { label: "Operational Log", to: "/records", icon: <Shield size={20} /> },
+        { label: "Overview", to: dashboardPath, icon: <LayoutDashboard size={20} /> },
+        ...(role !== "admin" ? [{ label: "Operational Log", to: "/records", icon: <Shield size={20} /> }] : []),
         { label: "Neural Comms", to: "/messages", icon: <Activity size={20} /> },
+        ...(role === 'admin' ? [
+            { label: "Surveillance", to: "/regional-surveillance", icon: <Globe size={20} /> },
+            { label: "Reporting", to: "/disease-reporting", icon: <FileText size={20} /> }
+        ] : []),
     ];
 
     return (
@@ -93,6 +99,7 @@ export default function AppLayout({ children }) {
                     {children}
                 </main>
             </div>
+            <AIChatbox />
         </div>
     );
 }

@@ -2,13 +2,12 @@
 
 AI-based healthcare bridge system prototype for rural India.
 
-- Localhost only
-- No Docker
-- Not production ready
+- Production Ready: Yes (Hardened DB, Scalable WS, Async AI)
+- Docker: Supported
 
 ## Stack
 
-- Backend: FastAPI + SQLAlchemy + SQLite
+- Backend: FastAPI + SQLAlchemy + PostgreSQL
 - Frontend: React (Vite)
 - Auth: JWT + bcrypt
 - Realtime: WebSocket chat + WebRTC signaling
@@ -84,7 +83,19 @@ pip install -r requirements.txt
 ### Run backend
 
 ```bash
+# Run API
 uvicorn main:app --reload --port 8000
+
+# Run Celery Worker (in a separate terminal)
+celery -A celery_app worker --loglevel=info
+```
+
+### Docker Compose (Recommended for Production Setup)
+
+To run the entire stack (PostgreSQL, Redis, API, Worker) with one command:
+
+```bash
+docker-compose up --build
 ```
 
 API docs: `http://localhost:8000/docs`
@@ -98,12 +109,17 @@ python ml/train_model.py
 
 This generates: `backend/ml/triage_model.joblib`
 
-### Run tests
+### Database Migrations
 
 ```bash
 cd inoveda/backend
-pytest -q
+# Generate migration (after model changes)
+alembic revision --autogenerate -m "description"
+# Apply migrations
+alembic upgrade head
 ```
+
+### Run tests
 
 ## Frontend Installation
 
@@ -141,7 +157,7 @@ Frontend URL: `http://localhost:5173`
 
 Backend:
 
-- `DATABASE_URL` (default: `sqlite:///./inoveda.db`)
+- `DATABASE_URL` (default: `postgresql://postgres:postgres@localhost:5432/inoveda`)
 - `JWT_SECRET` (default: `inoveda-dev-secret`)
 - `JWT_EXPIRE_MINUTES` (default: `1440`)
 - `USE_OPENAI=true` to enable OpenAI triage

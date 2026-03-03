@@ -1,6 +1,8 @@
 fastapi
 uvicorn
 sqlalchemy
+psycopg2-binary
+alembic
 python-jose
 passlib[bcrypt]
 email-validator
@@ -15,3 +17,7 @@ scikit-learn
 pytest
 pytest-asyncio
 httpx
+redis
+celery
+boto3
+prometheus-fastapi-instrumentator

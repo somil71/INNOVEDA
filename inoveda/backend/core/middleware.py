@@ -35,29 +35,36 @@ class RequestContextMiddleware(BaseHTTPMiddleware):
         return response
 
 
-class InMemoryRateLimitMiddleware(BaseHTTPMiddleware):
+import redis
+
+class RedisRateLimitMiddleware(BaseHTTPMiddleware):
     def __init__(self, app):
         super().__init__(app)
         self.window_seconds = 60
         self.limit = settings.rate_limit_per_minute
-        self.hits: dict[str, deque[float]] = defaultdict(deque)
+        self.redis = redis.from_url(settings.redis_url)
 
     async def dispatch(self, request: Request, call_next):
-        # Keep websocket signaling routes out of HTTP rate limiting.
         if request.url.path.startswith("/ws/"):
             return await call_next(request)
 
-        client = request.client.host if request.client else "unknown"
-        key = f"{client}:{request.url.path}"
+        client_host = request.client.host if request.client else "unknown"
+        # We use a sliding window via Redis sorted sets.
+        key = f"rl:{client_host}:{request.url.path}"
         now = time.time()
-        bucket = self.hits[key]
-        while bucket and now - bucket[0] > self.window_seconds:
-            bucket.popleft()
-        if len(bucket) >= self.limit:
+        
+        # Atomic sliding window increment
+        pipe = self.redis.pipeline()
+        pipe.zremrangebyscore(key, 0, now - self.window_seconds)
+        pipe.zadd(key, {str(now): now})
+        pipe.zcard(key)
+        pipe.expire(key, self.window_seconds + 10)
+        _, _, count, _ = pipe.execute()
+
+        if count > self.limit:
             return JSONResponse(
                 status_code=429,
-                content={"detail": "Rate limit exceeded"},
-                headers={"Retry-After": "60"},
+                content={"detail": "Too many requests. Please try again later."},
+                headers={"Retry-After": str(self.window_seconds)},
             )
-        bucket.append(now)
         return await call_next(request)

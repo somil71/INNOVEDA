@@ -24,7 +24,7 @@ export default function AdminDashboard() {
     const dispatchAmbulance = async (id) => {
         try {
             await api.post(`/admin/emergencies/${id}/dispatch`);
-            setEmergencies(emergencies.map(e => e.id === id ? { ...e, status: "dispatched" } : e));
+            setEmergencies(emergencies.map(e => e.id === id ? { ...e, status: "ambulance_dispatched" } : e));
             enqueueSnackbar("Emergency Response Dispatched", { variant: "info" });
         } catch {
             enqueueSnackbar("Dispatch Command Restricted", { variant: "error" });
@@ -58,7 +58,7 @@ export default function AdminDashboard() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 {[
                     { label: "Regional Nodes", val: (data?.village_counts ? Object.keys(data.village_counts).length : 0), icon: <Shield size={24} /> },
-                    { label: "Sync Events", val: (data?.trend_rows ? data.trend_rows.reduce((a, b) => a + b.count, 0) : 0), icon: <Activity size={24} /> },
+                    { label: "Sync Events", val: (data?.disease_trends ? data.disease_trends.reduce((a, b) => a + b.count, 0) : 0), icon: <Activity size={24} /> },
                     { label: "SOS Queue", val: emergencies.filter(e => e.status === 'pending').length, icon: <AlertCircle size={24} />, highlight: true },
                     { label: "Latency Score", val: "0.2ms", icon: <Zap size={24} /> }
                 ].map((stat, i) => (
@@ -86,7 +86,7 @@ export default function AdminDashboard() {
                 </div>
                 <div className="h-[450px]">
                     <ResponsiveContainer width="100%" height="100%">
-                        <AreaChart data={data?.trend_rows || []}>
+                        <AreaChart data={data?.disease_trends || []}>
                             <defs>
                                 <linearGradient id="colorCount" x1="0" y1="0" x2="0" y2="1">
                                     <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.25} />

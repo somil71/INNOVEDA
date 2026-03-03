@@ -7,12 +7,10 @@ from fastapi import HTTPException, UploadFile
 from sqlalchemy.orm import Session
 
 from core.config import settings
+from core.s3_utils import s3_service
 from models import User
 from repositories.clinical_repository import ClinicalRepository
 from repositories.doctor_repository import DoctorRepository
-from services.ai_service import run_triage_pipeline
-from services.mock_scheduler import schedule_dosage_notification
-from services.notifications import manager
 
 
 class PatientService:
@@ -31,41 +29,68 @@ class PatientService:
         }
 
     async def ai_chat(self, current_user: User, symptom_input: str, budget: float | None, language: str) -> dict:
-        payload = await run_triage_pipeline(self.db, symptom_input, budget, language)
-        self.repo.save_ai_chat_history(
-            patient_id=current_user.id,
-            input_text=symptom_input,
-            response_text=payload["ai_response"],
-            severity=payload["severity"],
-            confidence=payload["confidence"],
-            requires_emergency=payload["requires_emergency"],
-            extracted_symptoms=",".join(payload.get("extracted_symptoms", [])),
-        )
-        self.db.commit()
-        return payload
+        from tasks import ai_triage_task
+        task = ai_triage_task.delay(current_user.id, symptom_input, budget, language)
+        return {"task_id": task.id, "status": "processing", "message": "AI triage processing in background"}
 
     def _safe_upload_path(self, filename: str) -> Path:
         ext = Path(filename).suffix.lower()
         if ext not in settings.allowed_upload_extensions:
             raise HTTPException(status_code=400, detail="Unsupported file type")
-        upload_dir = Path(settings.upload_dir)
-        upload_dir.mkdir(parents=True, exist_ok=True)
-        return upload_dir / f"{uuid.uuid4()}{ext}"
+        if not settings.use_s3:
+            upload_dir = Path(settings.upload_dir)
+            upload_dir.mkdir(parents=True, exist_ok=True)
+            return upload_dir / f"{uuid.uuid4()}{ext}"
+        return Path(f"documents/{uuid.uuid4()}{ext}")
 
     async def upload_document(self, current_user: User, file: UploadFile):
         target = self._safe_upload_path(file.filename or "")
         data = await file.read()
         if len(data) > settings.max_upload_mb * 1024 * 1024:
             raise HTTPException(status_code=400, detail="File exceeds upload limit")
-        with open(target, "wb") as out:
-            out.write(data)
-        doc = self.repo.create_document(current_user.id, str(target).replace("\\", "/"))
-        self.db.commit()
-        return {"id": doc.id, "file_path": doc.file_path}
 
-    def list_documents(self, current_user: User):
-        docs = self.repo.list_documents(current_user.id)
-        return [{"id": d.id, "file_path": d.file_path, "uploaded_at": d.uploaded_at} for d in docs]
+        target_str = str(target).replace("\\", "/")
+        if settings.use_s3:
+            import io
+            if not s3_service.upload_fileobj(io.BytesIO(data), target_str):
+                raise HTTPException(status_code=500, detail="S3 upload failed")
+        else:
+            with open(target, "wb") as out:
+                out.write(data)
+
+        doc = self.repo.create_document(current_user.id, target_str)
+        self.db.commit()
+        return {"id": doc.id, "file_path": target_str}
+
+    def list_documents(self, current_user: User, limit: int = 10, offset: int = 0):
+        docs = self.repo.list_documents(current_user.id, limit, offset)
+        return [
+            {
+                "id": d.id, 
+                "file_path": s3_service.generate_download_url(d.file_path) if settings.use_s3 else d.file_path,
+                "uploaded_at": d.uploaded_at
+            } 
+            for d in docs
+        ]
+
+    async def get_presigned_upload_url(self, filename: str):
+        if not settings.use_s3:
+            raise HTTPException(status_code=400, detail="S3 storage is not enabled")
+        
+        ext = Path(filename).suffix.lower()
+        if ext not in settings.allowed_upload_extensions:
+            raise HTTPException(status_code=400, detail="Unsupported file type")
+            
+        object_name = f"documents/{uuid.uuid4()}{ext}"
+        presigned_post = s3_service.generate_upload_url(object_name)
+        if not presigned_post:
+             raise HTTPException(status_code=500, detail="Failed to generate upload URL")
+        return {"presigned_post": presigned_post, "s3_key": object_name}
+
+    def confirm_document_upload(self, current_user: User, s3_key: str):
+        doc = self.repo.create_document(current_user.id, s3_key)
+        self.db.commit()
+        return {"id": doc.id, "file_path": s3_key}
 
     def book_appointment(self, current_user: User, doctor_id: int, date: str):
         if not self.doctors.user_is_doctor(doctor_id):
@@ -74,8 +99,8 @@ class PatientService:
         self.db.commit()
         return {"message": "Appointment booked", "appointment_id": row.id}
 
-    def list_prescriptions(self, current_user: User):
-        rows = self.repo.list_prescriptions(current_user.id)
+    def list_prescriptions(self, current_user: User, limit: int = 10, offset: int = 0):
+        rows = self.repo.list_prescriptions(current_user.id, limit, offset)
         return [{"id": p.id, "doctor_id": p.doctor_id, "created_at": p.created_at} for p in rows]
 
     def cart(self, current_user: User):

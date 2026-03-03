@@ -30,8 +30,8 @@ class AdminService:
                 await manager.send_to_user(admin.id, {"type": "outbreak_alert", "alerts": summary["outbreak_alerts"]})
         return {"message": "Disease report saved", "outbreak_alerts": summary["outbreak_alerts"]}
 
-    def emergencies(self):
-        rows = self.repo.list_emergencies()
+    def emergencies(self, limit: int = 20, offset: int = 0):
+        rows = self.repo.list_emergencies(limit, offset)
         return [{"id": r.id, "patient_id": r.patient_id, "status": r.status, "created_at": r.created_at} for r in rows]
 
     async def dispatch_mock_ambulance(self, request_id: int):

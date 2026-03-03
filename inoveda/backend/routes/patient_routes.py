@@ -1,10 +1,10 @@
-from fastapi import APIRouter, Depends, File, UploadFile
+from fastapi import APIRouter, Depends, File, Query, UploadFile
 from sqlalchemy.orm import Session
 
 from auth import require_role
 from database import SessionLocal, get_db
 from models import User
-from schemas import AIChatRequest, AppointmentCreate
+from schemas import AIChatRequest, AppointmentCreate, S3ConfirmRequest, S3PresignedUploadResponse
 from services.patient_service import PatientService
 
 router = APIRouter(prefix="/patient", tags=["patient"])
@@ -20,6 +20,18 @@ async def ai_chat(payload: AIChatRequest, current_user: User = Depends(require_r
     return await PatientService(db).ai_chat(current_user, payload.symptom_input, payload.budget, payload.language)
 
 
+@router.get("/ai-chat/status/{task_id}")
+async def ai_chat_status(task_id: str, current_user: User = Depends(require_role(["patient"]))):
+    from celery.result import AsyncResult
+    from celery_app import celery_app
+    result = AsyncResult(task_id, app=celery_app)
+    return {
+        "task_id": task_id,
+        "status": result.status,
+        "result": result.result if result.ready() else None
+    }
+
+
 @router.post("/documents/upload")
 async def upload_document(
     file: UploadFile = File(...),
@@ -29,9 +41,32 @@ async def upload_document(
     return await PatientService(db).upload_document(current_user, file)
 
 
+@router.get("/documents/presigned-upload-url", response_model=S3PresignedUploadResponse)
+async def get_presigned_upload_url(
+    filename: str,
+    current_user: User = Depends(require_role(["patient"])),
+    db: Session = Depends(get_db)
+):
+    return await PatientService(db).get_presigned_upload_url(filename)
+
+
+@router.post("/documents/confirm-upload")
+async def confirm_document_upload(
+    payload: S3ConfirmRequest,
+    current_user: User = Depends(require_role(["patient"])),
+    db: Session = Depends(get_db)
+):
+    return PatientService(db).confirm_document_upload(current_user, payload.s3_key)
+
+
 @router.get("/documents")
-def list_documents(current_user: User = Depends(require_role(["patient"])), db: Session = Depends(get_db)):
-    return PatientService(db).list_documents(current_user)
+def list_documents(
+    limit: int = Query(10, ge=1),
+    offset: int = Query(0, ge=0),
+    current_user: User = Depends(require_role(["patient"])),
+    db: Session = Depends(get_db),
+):
+    return PatientService(db).list_documents(current_user, limit, offset)
 
 
 @router.post("/appointments")
@@ -44,8 +79,13 @@ def book_appointment(
 
 
 @router.get("/prescriptions")
-def list_prescriptions(current_user: User = Depends(require_role(["patient"])), db: Session = Depends(get_db)):
-    return PatientService(db).list_prescriptions(current_user)
+def list_prescriptions(
+    limit: int = Query(10, ge=1),
+    offset: int = Query(0, ge=0),
+    current_user: User = Depends(require_role(["patient"])),
+    db: Session = Depends(get_db),
+):
+    return PatientService(db).list_prescriptions(current_user, limit, offset)
 
 
 @router.get("/cart")

@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
 
 from auth import require_role
@@ -25,8 +25,13 @@ async def add_disease_report(
 
 
 @router.get("/emergencies")
-def emergencies(current_user: User = Depends(require_role(["admin"])), db: Session = Depends(get_db)):
-    return AdminService(db).emergencies()
+def emergencies(
+    limit: int = Query(20, ge=1),
+    offset: int = Query(0, ge=0),
+    current_user: User = Depends(require_role(["admin"])),
+    db: Session = Depends(get_db),
+):
+    return AdminService(db).emergencies(limit, offset)
 
 
 @router.post("/emergencies/{request_id}/dispatch")

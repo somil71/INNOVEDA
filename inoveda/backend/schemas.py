@@ -117,3 +117,12 @@ class OutbreakSummaryOut(BaseModel):
     village_counts: dict[str, int]
     trend_rows: List[dict[str, Any]]
     outbreak_alerts: List[OutbreakAlertOut]
+
+
+class S3PresignedUploadResponse(BaseModel):
+    presigned_post: dict
+    s3_key: str
+
+
+class S3ConfirmRequest(BaseModel):
+    s3_key: str

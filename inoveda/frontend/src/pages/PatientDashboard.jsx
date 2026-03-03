@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
 import api, { cachedGet } from "../api";
 import { motion } from "framer-motion";
 import {
@@ -17,15 +16,17 @@ import {
     Shield
 } from "lucide-react";
 import { useSnackbar } from "notistack";
+import EmergencyPanel from "../components/EmergencyPanel";
 
 export default function PatientDashboard() {
-    const { user } = useAuth();
     const { enqueueSnackbar } = useSnackbar();
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [symptomInput, setSymptomInput] = useState("");
     const [triage, setTriage] = useState(null);
     const [busy, setBusy] = useState(false);
+    const [sosOpen, setSosOpen] = useState(false);
+    const [appointmentDate, setAppointmentDate] = useState("");
 
     useEffect(() => {
         cachedGet("/patient/dashboard", "patient_dashboard_cache")
@@ -40,6 +41,9 @@ export default function PatientDashboard() {
             const res = await api.post("/patient/ai-chat", { symptom_input: symptomInput });
             setTriage(res.data);
             enqueueSnackbar("Triage analysis complete", { variant: "info" });
+            if (res.data.severity === 'critical') {
+                setSosOpen(true);
+            }
         } catch {
             enqueueSnackbar("Unable to reach AI nodes", { variant: "error" });
         } finally {
@@ -50,9 +54,24 @@ export default function PatientDashboard() {
     const triggerSOS = async () => {
         try {
             await api.post("/patient/emergency");
-            enqueueSnackbar("Emergency responders notified", { variant: "warning" });
+            enqueueSnackbar("Regional dispatch alerted", { variant: "warning" });
         } catch {
-            enqueueSnackbar("SOS signal failed", { variant: "error" });
+            enqueueSnackbar("SOS signal interruption", { variant: "error" });
+        }
+    };
+
+    const bookAppointment = async (doctorId) => {
+        if (!appointmentDate) {
+            enqueueSnackbar("Select appointment date/time first", { variant: "warning" });
+            return;
+        }
+        try {
+            await api.post("/patient/appointments", { doctor_id: doctorId, date: appointmentDate });
+            enqueueSnackbar("Appointment booked", { variant: "success" });
+            const refreshed = await api.get("/patient/dashboard");
+            setData(refreshed.data);
+        } catch (err) {
+            enqueueSnackbar(err.response?.data?.detail || "Unable to book appointment", { variant: "error" });
         }
     };
 
@@ -75,12 +94,14 @@ export default function PatientDashboard() {
                     </p>
                 </div>
                 <button
-                    onClick={triggerSOS}
+                    onClick={() => setSosOpen(true)}
                     className="bg-red-50 text-red-600 px-8 py-4 rounded-2xl font-black text-[11px] uppercase tracking-widest border border-red-100 hover:bg-red-600 hover:text-white transition-all shadow-[0_12px_24px_-8px_rgba(220,38,38,0.2)] active:scale-95"
                 >
                     Signal Regional SOS
                 </button>
             </div>
+
+            <EmergencyPanel isOpen={sosOpen} onClose={() => setSosOpen(false)} onTrigger={triggerSOS} />
 
             <div className="grid grid-cols-12 gap-10 items-start">
 
@@ -160,6 +181,36 @@ export default function PatientDashboard() {
                                     <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Neural Narrative Output</p>
                                     <p className="text-lg text-slate-700 font-semibold leading-relaxed italic">"{triage.ai_response}"</p>
                                 </div>
+
+                                {Array.isArray(triage.doctor_suggestions) && triage.doctor_suggestions.length > 0 && (
+                                    <div className="mt-8 space-y-4">
+                                        <div className="flex items-center gap-3">
+                                            <input
+                                                type="datetime-local"
+                                                value={appointmentDate}
+                                                onChange={(e) => setAppointmentDate(e.target.value)}
+                                                className="px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm"
+                                            />
+                                            <span className="text-xs text-slate-500">Choose date/time before booking</span>
+                                        </div>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            {triage.doctor_suggestions.map((doc) => (
+                                                <div key={doc.id} className="p-5 rounded-2xl border border-slate-100 bg-white flex justify-between items-center">
+                                                    <div>
+                                                        <p className="text-sm font-bold text-slate-900">{doc.name}</p>
+                                                        <p className="text-xs text-slate-500">{doc.specialization || "General"} | Rs {doc.consultation_fee ?? 0}</p>
+                                                    </div>
+                                                    <button
+                                                        onClick={() => bookAppointment(doc.id)}
+                                                        className="px-3 py-2 rounded-xl bg-slate-900 text-white text-xs"
+                                                    >
+                                                        Book
+                                                    </button>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
                             </motion.div>
                         )}
                     </div>

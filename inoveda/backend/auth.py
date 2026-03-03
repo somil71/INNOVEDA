@@ -12,16 +12,24 @@ from models import User
 from repositories.user_repository import UserRepository
 from services.auth_service import AuthService
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+from fastapi import Depends, HTTPException, Request, status
 
+def get_current_user(request: Request, db: Session = Depends(get_db)) -> User:
+    token = request.cookies.get("access_token")
+    if not token:
+        # Fallback for dev/testing if needed, but primary is cookie now
+        auth_header = request.headers.get("Authorization")
+        if auth_header and auth_header.startswith("Bearer "):
+            token = auth_header.split(" ")[1]
 
-def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)) -> User:
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
         headers={"WWW-Authenticate": "Bearer"},
     )
+    if not token:
+        raise credentials_exception
+
     payload = AuthService(db).decode_token(token)
     user_id = payload.get("sub")
     token_role = payload.get("role")

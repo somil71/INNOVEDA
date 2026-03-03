@@ -1,6 +1,4 @@
-import { AnimatePresence } from "framer-motion";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
-import { useAuth } from "./context/AuthContext";
 
 import AppLayout from "./components/AppLayout";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -12,16 +10,9 @@ import PatientDashboard from "./pages/PatientDashboard";
 import Register from "./pages/Register";
 import Records from "./pages/Records";
 import Messages from "./pages/Messages";
-
-const PageWrapper = ({ children, useLayout }) => (
-  <AnimatePresence mode="wait">
-    {useLayout ? (
-      <AppLayout>{children}</AppLayout>
-    ) : (
-      children
-    )}
-  </AnimatePresence>
-);
+import RegionalSurveillance from "./pages/RegionalSurveillance";
+import PatientDetail from "./pages/PatientDetail";
+import DiseaseReporting from "./pages/DiseaseReporting";
 
 export default function App() {
   const location = useLocation();
@@ -65,10 +56,34 @@ export default function App() {
         }
       />
       <Route
+        path="/patient/:id"
+        element={
+          <ProtectedRoute allowedRoles={["doctor"]}>
+            <AppLayout><PatientDetail /></AppLayout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
         path="/messages"
         element={
           <ProtectedRoute allowedRoles={["patient", "doctor", "admin"]}>
             <AppLayout><Messages /></AppLayout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/disease-reporting"
+        element={
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <AppLayout><DiseaseReporting /></AppLayout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/regional-surveillance"
+        element={
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <AppLayout><RegionalSurveillance /></AppLayout>
           </ProtectedRoute>
         }
       />

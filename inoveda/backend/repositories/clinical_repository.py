@@ -50,8 +50,15 @@ class ClinicalRepository:
         self.db.flush()
         return row
 
-    def list_documents(self, patient_id: int) -> list[Document]:
-        return self.db.query(Document).filter(Document.patient_id == patient_id).all()
+    def list_documents(self, patient_id: int, limit: int = 10, offset: int = 0) -> list[Document]:
+        return (
+            self.db.query(Document)
+            .filter(Document.patient_id == patient_id)
+            .order_by(Document.uploaded_at.desc())
+            .offset(offset)
+            .limit(limit)
+            .all()
+        )
 
     def create_message(self, sender_id: int, receiver_id: int, content: str) -> Message:
         row = Message(sender_id=sender_id, receiver_id=receiver_id, content=content)
@@ -114,8 +121,15 @@ class ClinicalRepository:
     def list_cart(self, patient_id: int) -> list[PatientCartItem]:
         return self.db.query(PatientCartItem).filter(PatientCartItem.patient_id == patient_id).all()
 
-    def list_prescriptions(self, patient_id: int) -> list[Prescription]:
-        return self.db.query(Prescription).filter(Prescription.patient_id == patient_id).all()
+    def list_prescriptions(self, patient_id: int, limit: int = 10, offset: int = 0) -> list[Prescription]:
+        return (
+            self.db.query(Prescription)
+            .filter(Prescription.patient_id == patient_id)
+            .order_by(Prescription.created_at.desc())
+            .offset(offset)
+            .limit(limit)
+            .all()
+        )
 
     def create_emergency(self, patient_id: int, status: str = "pending") -> EmergencyRequest:
         row = EmergencyRequest(patient_id=patient_id, status=status)
@@ -123,8 +137,14 @@ class ClinicalRepository:
         self.db.flush()
         return row
 
-    def list_emergencies(self) -> list[EmergencyRequest]:
-        return self.db.query(EmergencyRequest).order_by(EmergencyRequest.created_at.desc()).all()
+    def list_emergencies(self, limit: int = 20, offset: int = 0) -> list[EmergencyRequest]:
+        return (
+            self.db.query(EmergencyRequest)
+            .order_by(EmergencyRequest.created_at.desc())
+            .offset(offset)
+            .limit(limit)
+            .all()
+        )
 
     def get_emergency(self, request_id: int) -> EmergencyRequest | None:
         return self.db.query(EmergencyRequest).filter(EmergencyRequest.id == request_id).first()
@@ -138,6 +158,8 @@ class ClinicalRepository:
         confidence: float,
         requires_emergency: bool,
         extracted_symptoms: str,
+        is_flagged: bool = False,
+        safety_notes: str | None = None,
     ) -> AIChatHistory:
         row = AIChatHistory(
             patient_id=patient_id,
@@ -147,6 +169,8 @@ class ClinicalRepository:
             confidence=confidence,
             requires_emergency=requires_emergency,
             extracted_symptoms=extracted_symptoms,
+            is_flagged=is_flagged,
+            safety_notes=safety_notes,
         )
         self.db.add(row)
         self.db.flush()

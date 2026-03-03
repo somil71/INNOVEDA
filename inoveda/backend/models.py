@@ -78,6 +78,8 @@ class AIChatHistory(Base):
     confidence = Column(Float, nullable=True)
     requires_emergency = Column(Boolean, default=False)
     extracted_symptoms = Column(Text, nullable=True)
+    is_flagged = Column(Boolean, default=False)
+    safety_notes = Column(Text, nullable=True)
     created_at = Column(DateTime, default=utcnow)
 
 

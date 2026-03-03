@@ -16,6 +16,7 @@ import {
     MapPin
 } from "lucide-react";
 import { useSnackbar } from "notistack";
+import RxModal from "../components/RxModal";
 
 export default function DoctorDashboard() {
     const { enqueueSnackbar } = useSnackbar();
@@ -23,6 +24,7 @@ export default function DoctorDashboard() {
     const [loading, setLoading] = useState(true);
     const [patients, setPatients] = useState([]);
     const [search, setSearch] = useState("");
+    const [rxOpen, setRxOpen] = useState(false);
 
     useEffect(() => {
         Promise.all([
@@ -48,9 +50,9 @@ export default function DoctorDashboard() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 {[
                     { label: "Active Case Load", val: patients.length, color: "blue", icon: <Users size={24} /> },
-                    { label: "Consultations", val: data?.today_consultations || 0, color: "slate", icon: <ClipboardList size={24} /> },
-                    { label: "Emergency Cues", val: data?.critical_alerts || 0, color: "red", icon: <Activity size={24} /> },
-                    { label: "Incoming Comms", val: 3, color: "emerald", icon: <Mail size={24} /> }
+                    { label: "Consultations", val: data?.appointments || 0, color: "slate", icon: <ClipboardList size={24} /> },
+                    { label: "Assigned IDs", val: data?.assigned_patients?.length || 0, color: "red", icon: <Activity size={24} /> },
+                    { label: "Incoming Comms", val: data?.appointments || 0, color: "emerald", icon: <Mail size={24} /> }
                 ].map((stat, i) => (
                     <div key={i} className="bg-white p-10 rounded-[3rem] border border-slate-100 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.03)] flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300 group">
                         <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 border border-slate-50 transition-colors ${stat.color === 'blue' ? 'bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white' : stat.color === 'red' ? 'bg-red-50 text-red-600 group-hover:bg-red-600 group-hover:text-white' : stat.color === 'emerald' ? 'bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white' : 'bg-slate-50 text-slate-600 group-hover:bg-slate-900 group-hover:text-white'}`}>
@@ -100,14 +102,17 @@ export default function DoctorDashboard() {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-50">
-                                {patients.filter(p => p.name.toLowerCase().includes(search.toLowerCase())).map((p, i) => (
+                                {patients.filter(p => (p.name || "").toLowerCase().includes(search.toLowerCase())).map((p, i) => (
                                     <tr key={i} className="hover:bg-slate-50/40 transition-all group cursor-pointer">
                                         <td className="px-12 py-8">
-                                            <div className="flex items-center gap-5">
-                                                <div className="w-12 h-12 bg-white border border-slate-100 rounded-2xl flex items-center justify-center font-black text-slate-500 shadow-sm transition-transform group-hover:scale-110">
+                                            <div className="flex items-center gap-4">
+                                                <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center font-black text-slate-400 border border-slate-100/50 group-hover:bg-blue-600 group-hover:text-white transition-all">
                                                     {p.name.charAt(0)}
                                                 </div>
-                                                <p className="text-base font-black text-slate-900 group-hover:text-blue-600 transition-colors uppercase tracking-tight">{p.name}</p>
+                                                <Link to={`/patient/${p.id}`} className="flex flex-col hover:translate-x-1 transition-transform cursor-pointer">
+                                                    <p className="text-base font-black text-slate-900 tracking-tight uppercase group-hover:text-blue-600 transition-colors italic">{p.name}</p>
+                                                    <p className="text-[10px] font-black text-slate-300 mt-1 uppercase tracking-widest">Global Resident Auth</p>
+                                                </Link>
                                             </div>
                                         </td>
                                         <td className="px-12 py-8">
@@ -153,10 +158,22 @@ export default function DoctorDashboard() {
                             <h3 className="text-4xl font-black mb-6 leading-tight tracking-tighter italic">Clinical Command <br /> RX Terminal.</h3>
                             <p className="text-slate-400 text-sm font-medium mb-12 leading-relaxed opacity-80">Authorize medicine distributions and digital signatures for district Pharmacies.</p>
                         </div>
-                        <button className="w-full bg-blue-600 text-white py-6 rounded-[1.75rem] font-black text-xs uppercase tracking-[0.2em] shadow-2xl shadow-blue-500/30 hover:bg-white hover:text-slate-900 transition-all flex items-center justify-center gap-3 active:scale-95">
+                        <button
+                            onClick={() => setRxOpen(true)}
+                            className="w-full bg-blue-600 text-white py-6 rounded-[1.75rem] font-black text-xs uppercase tracking-[0.2em] shadow-2xl shadow-blue-500/30 hover:bg-white hover:text-slate-900 transition-all flex items-center justify-center gap-3 active:scale-95"
+                        >
                             <Plus size={18} /> New Prescription
                         </button>
                     </div>
+
+                    <RxModal
+                        isOpen={rxOpen}
+                        onClose={() => setRxOpen(false)}
+                        patients={patients}
+                        onMedicineDistributed={() => {
+                            enqueueSnackbar("Medical artifact authorized and distributed", { variant: "success" });
+                        }}
+                    />
 
                     {/* Surveillance Feed */}
                     <div className="bg-white rounded-[3.5rem] p-10 border border-slate-100 shadow-premium">
