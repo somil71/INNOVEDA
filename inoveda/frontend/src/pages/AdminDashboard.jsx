@@ -1,15 +1,33 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import api, { cachedGet } from "../api";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { Shield, Zap, Activity, Users, AlertCircle, Send, Plus, Search, ChevronRight } from "lucide-react";
 import { useSnackbar } from "notistack";
 
+const DISEASE_COLORS = ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#06b6d4"];
+
 export default function AdminDashboard() {
     const { enqueueSnackbar } = useSnackbar();
     const [data, setData] = useState(null);
     const [emergencies, setEmergencies] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    const diseaseKeys = useMemo(() => {
+        const keys = new Set();
+        (data?.disease_trends || []).forEach(row => {
+            Object.keys(row).filter(k => k !== "date").forEach(k => keys.add(k));
+        });
+        return Array.from(keys);
+    }, [data?.disease_trends]);
+
+    const syncEvents = useMemo(() => {
+        return (data?.disease_trends || []).reduce((acc, row) => {
+            return acc + Object.entries(row)
+                .filter(([k]) => k !== "date")
+                .reduce((s, [, v]) => s + (Number(v) || 0), 0);
+        }, 0);
+    }, [data?.disease_trends]);
 
     useEffect(() => {
         Promise.all([
@@ -58,7 +76,7 @@ export default function AdminDashboard() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 {[
                     { label: "Regional Nodes", val: (data?.village_counts ? Object.keys(data.village_counts).length : 0), icon: <Shield size={24} /> },
-                    { label: "Sync Events", val: (data?.disease_trends ? data.disease_trends.reduce((a, b) => a + b.count, 0) : 0), icon: <Activity size={24} /> },
+                    { label: "Sync Events", val: syncEvents, icon: <Activity size={24} /> },
                     { label: "SOS Queue", val: emergencies.filter(e => e.status === 'pending').length, icon: <AlertCircle size={24} />, highlight: true },
                     { label: "Latency Score", val: "0.2ms", icon: <Zap size={24} /> }
                 ].map((stat, i) => (
@@ -85,25 +103,44 @@ export default function AdminDashboard() {
                     </div>
                 </div>
                 <div className="h-[450px]">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <AreaChart data={data?.disease_trends || []}>
-                            <defs>
-                                <linearGradient id="colorCount" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.25} />
-                                    <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
-                                </linearGradient>
-                            </defs>
-                            <CartesianGrid strokeDasharray="6 6" vertical={false} stroke="#F1F5F9" />
-                            <XAxis dataKey="date" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 900, fill: '#94A3B8' }} dy={15} />
-                            <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 900, fill: '#94A3B8' }} />
-                            <Tooltip
-                                cursor={{ stroke: '#3b82f6', strokeWidth: 2 }}
-                                contentStyle={{ borderRadius: '24px', border: 'none', boxShadow: '0 32px 64px -16px rgba(0,0,0,0.12)', padding: '24px', backgroundColor: '#fff' }}
-                                itemStyle={{ fontWeight: 900, color: '#0F172A', fontSize: '14px', textTransform: 'uppercase' }}
-                            />
-                            <Area type="monotone" dataKey="count" stroke="#3b82f6" strokeWidth={5} fillOpacity={1} fill="url(#colorCount)" animationDuration={2000} />
-                        </AreaChart>
-                    </ResponsiveContainer>
+                    {diseaseKeys.length === 0 ? (
+                        <div className="h-full flex items-center justify-center text-slate-300 font-black uppercase tracking-widest text-sm italic">
+                            No disease reports yet — submit one via Diagnostic Ingestion
+                        </div>
+                    ) : (
+                        <ResponsiveContainer width="100%" height="100%">
+                            <AreaChart data={data?.disease_trends || []}>
+                                <defs>
+                                    {diseaseKeys.map((key, i) => (
+                                        <linearGradient key={key} id={`color_${key}`} x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="5%" stopColor={DISEASE_COLORS[i % DISEASE_COLORS.length]} stopOpacity={0.25} />
+                                            <stop offset="95%" stopColor={DISEASE_COLORS[i % DISEASE_COLORS.length]} stopOpacity={0} />
+                                        </linearGradient>
+                                    ))}
+                                </defs>
+                                <CartesianGrid strokeDasharray="6 6" vertical={false} stroke="#F1F5F9" />
+                                <XAxis dataKey="date" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 900, fill: '#94A3B8' }} dy={15} />
+                                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 900, fill: '#94A3B8' }} />
+                                <Tooltip
+                                    cursor={{ stroke: '#3b82f6', strokeWidth: 2 }}
+                                    contentStyle={{ borderRadius: '24px', border: 'none', boxShadow: '0 32px 64px -16px rgba(0,0,0,0.12)', padding: '24px', backgroundColor: '#fff' }}
+                                    itemStyle={{ fontWeight: 900, color: '#0F172A', fontSize: '14px', textTransform: 'uppercase' }}
+                                />
+                                {diseaseKeys.map((key, i) => (
+                                    <Area
+                                        key={key}
+                                        type="monotone"
+                                        dataKey={key}
+                                        stroke={DISEASE_COLORS[i % DISEASE_COLORS.length]}
+                                        strokeWidth={3}
+                                        fillOpacity={1}
+                                        fill={`url(#color_${key})`}
+                                        animationDuration={2000}
+                                    />
+                                ))}
+                            </AreaChart>
+                        </ResponsiveContainer>
+                    )}
                 </div>
             </div>
 

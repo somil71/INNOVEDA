@@ -1,12 +1,43 @@
+import json
+import logging
+import os
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Literal
 
 from pydantic import Field
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings, PydanticBaseSettingsSource, SettingsConfigDict
 
+logger = logging.getLogger(__name__)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+class AWSSecretsManagerSource(PydanticBaseSettingsSource):
+    """Optional AWS Secrets Manager source — only active when USE_AWS_SECRETS=true."""
+
+    def __call__(self) -> dict[str, Any]:
+        use_aws = os.getenv("USE_AWS_SECRETS", "false").lower() == "true"
+        secret_name = os.getenv("AWS_SECRET_NAME")
+        region = os.getenv("AWS_REGION", "us-east-1")
+        if not use_aws or not secret_name:
+            return {}
+        try:
+            import boto3
+            from botocore.exceptions import ClientError
+            client = boto3.client("secretsmanager", region_name=region)
+            resp = client.get_secret_value(SecretId=secret_name)
+            if "SecretString" in resp:
+                return json.loads(resp["SecretString"])
+        except Exception:
+            logger.warning("aws_secrets_fetch_failed")
+        return {}
+
+    def get_field_value(self, field: Any, field_name: str) -> Any:
+        return None, field_name, False
+
+    def field_is_complex(self, field: Any) -> bool:
+        return False
 
 
 class Settings(BaseSettings):
@@ -26,40 +57,13 @@ class Settings(BaseSettings):
         dotenv_settings,
         file_secret_settings,
     ):
-        """Allow fetching from AWS Secrets Manager if configured in .env"""
         return (
             init_settings,
             env_settings,
             dotenv_settings,
-            cls.fetch_aws_secrets,
+            AWSSecretsManagerSource(settings_cls),
             file_secret_settings,
         )
-
-    @staticmethod
-    def fetch_aws_secrets(settings_cls: type[BaseSettings]) -> dict[str, Any]:
-        """Hook for Pydantic Settings to pull from AWS at startup"""
-        # We need to peek at env to see if we should use AWS
-        import os
-        import json
-        import boto3
-        from botocore.exceptions import ClientError
-
-        use_aws = os.getenv("USE_AWS_SECRETS", "false").lower() == "true"
-        secret_name = os.getenv("AWS_SECRET_NAME")
-        region = os.getenv("AWS_REGION", "us-east-1")
-
-        if not use_aws or not secret_name:
-            return {}
-
-        client = boto3.client("secretsmanager", region_name=region)
-        try:
-            resp = client.get_secret_value(SecretId=secret_name)
-            if "SecretString" in resp:
-                return json.loads(resp["SecretString"])
-        except ClientError:
-            # Fallback to empty if AWS fails
-            return {}
-        return {}
 
     app_name: str = "INOVEDA API"
     app_version: str = "0.2.0"
@@ -78,7 +82,9 @@ class Settings(BaseSettings):
     max_upload_mb: int = 10
     allowed_upload_extensions: set[str] = Field(default_factory=lambda: {".pdf", ".png", ".jpg", ".jpeg"})
 
-    cors_origins: list[str] = Field(default_factory=lambda: ["http://localhost:5173", "http://127.0.0.1:5173"])
+    cors_origins: list[str] = Field(
+        default_factory=lambda: ["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000"]
+    )
 
     rate_limit_per_minute: int = 120
 

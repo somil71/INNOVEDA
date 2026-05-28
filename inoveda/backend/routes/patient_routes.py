@@ -1,11 +1,18 @@
+import logging
+
 from fastapi import APIRouter, Depends, File, Query, UploadFile
 from sqlalchemy.orm import Session
 
 from auth import require_role
 from database import SessionLocal, get_db
 from models import User
+from repositories.clinical_repository import ClinicalRepository
 from schemas import AIChatRequest, AppointmentCreate, S3ConfirmRequest, S3PresignedUploadResponse
+from services.ai_service import run_triage_pipeline
 from services.patient_service import PatientService
+from services.safety_service import SafetyService
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/patient", tags=["patient"])
 
@@ -16,20 +23,40 @@ def dashboard(current_user: User = Depends(require_role(["patient"])), db: Sessi
 
 
 @router.post("/ai-chat")
-async def ai_chat(payload: AIChatRequest, current_user: User = Depends(require_role(["patient"])), db: Session = Depends(get_db)):
-    return await PatientService(db).ai_chat(current_user, payload.symptom_input, payload.budget, payload.language)
+async def ai_chat(
+    payload: AIChatRequest,
+    current_user: User = Depends(require_role(["patient"])),
+    db: Session = Depends(get_db),
+):
+    result = await run_triage_pipeline(db, payload.symptom_input, payload.budget, payload.language)
 
+    is_safe, safety_msg = SafetyService.validate_triage(
+        result.get("extracted_symptoms", []),
+        result.get("severity", "mild"),
+    )
+    SafetyService.log_drift(current_user.id, "v1", result.get("confidence", 0.0))
 
-@router.get("/ai-chat/status/{task_id}")
-async def ai_chat_status(task_id: str, current_user: User = Depends(require_role(["patient"]))):
-    from celery.result import AsyncResult
-    from celery_app import celery_app
-    result = AsyncResult(task_id, app=celery_app)
-    return {
-        "task_id": task_id,
-        "status": result.status,
-        "result": result.result if result.ready() else None
-    }
+    repo = ClinicalRepository(db)
+    repo.save_ai_chat_history(
+        patient_id=current_user.id,
+        input_text=payload.symptom_input,
+        response_text=result["ai_response"],
+        severity=result["severity"],
+        confidence=result["confidence"],
+        requires_emergency=result["requires_emergency"],
+        extracted_symptoms=",".join(result.get("extracted_symptoms", [])),
+        is_flagged=not is_safe,
+        safety_notes=safety_msg,
+    )
+    db.commit()
+
+    try:
+        from services.notifications import manager
+        await manager.send_to_user(current_user.id, {"type": "ai_triage_complete", "payload": result})
+    except Exception:
+        logger.debug("ws_notify_skipped")
+
+    return result
 
 
 @router.post("/documents/upload")

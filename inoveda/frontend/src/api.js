@@ -1,13 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:8000",
+    baseURL: import.meta.env.VITE_API_URL || "http://localhost:8000",
     withCredentials: true,
-});
-
-api.interceptors.request.use((config) => {
-    // We no longer manually set the Authorization header for cookie-based auth
-    return config;
 });
 
 export const cachedGet = async (url, key) => {

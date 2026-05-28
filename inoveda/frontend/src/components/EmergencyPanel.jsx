@@ -74,7 +74,7 @@ export default function EmergencyPanel({ isOpen, onClose, onTrigger }) {
                                 <div className="w-24 h-24 bg-emerald-100 rounded-[3rem] flex items-center justify-center mx-auto mb-10 text-emerald-600 shadow-xl shadow-emerald-100">
                                     <ShieldAlert size={48} />
                                 </div>
-                                <h2 className="text-4xl font-black text-slate-900 tracking-tighter italic uppercase mb-6">SOS Broadcasitng</h2>
+                                <h2 className="text-4xl font-black text-slate-900 tracking-tighter italic uppercase mb-6">SOS Broadcasting</h2>
                                 <div className="space-y-4 mb-12">
                                     <div className="flex items-center justify-between p-6 bg-emerald-50 rounded-[2.5rem] border border-emerald-100">
                                         <div className="flex items-center gap-4">

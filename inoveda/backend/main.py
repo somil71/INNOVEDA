@@ -19,7 +19,7 @@ from routes.doctor_routes import router as doctor_router
 from routes.patient_routes import router as patient_router
 from routes.ws_routes import router as ws_router
 
-# Base.metadata.create_all(bind=engine)  # Migrations handled via Alembic
+Base.metadata.create_all(bind=engine)
 setup_logging()
 Path(settings.upload_dir).mkdir(parents=True, exist_ok=True)
 logger = logging.getLogger(__name__)

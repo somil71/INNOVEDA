@@ -1,18 +1,11 @@
-from datetime import datetime, timedelta, timezone
-
-from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer
-from jose import jwt
-from passlib.context import CryptContext
+from fastapi import Depends, HTTPException, Request, status
 from sqlalchemy.orm import Session
 
-from core.config import settings
 from database import get_db
 from models import User
 from repositories.user_repository import UserRepository
 from services.auth_service import AuthService
 
-from fastapi import Depends, HTTPException, Request, status
 
 def get_current_user(request: Request, db: Session = Depends(get_db)) -> User:
     token = request.cookies.get("access_token")
@@ -53,15 +46,3 @@ def require_role(allowed_roles: list[str]):
     return role_checker
 
 
-def hash_password(password: str) -> str:
-    return pwd_context.hash(password)
-
-
-def verify_password(password: str, hashed_password: str) -> bool:
-    return pwd_context.verify(password, hashed_password)
-
-
-def create_access_token(data: dict) -> str:
-    payload = dict(data)
-    payload.setdefault("exp", datetime.now(timezone.utc) + timedelta(minutes=settings.jwt_expire_minutes))
-    return jwt.encode(payload, settings.jwt_secret, algorithm=settings.jwt_algorithm)

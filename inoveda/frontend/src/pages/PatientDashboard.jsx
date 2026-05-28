@@ -35,13 +35,13 @@ export default function PatientDashboard() {
     }, []);
 
     const runTriage = async () => {
-        if (!symptomInput) return;
+        if (!symptomInput.trim()) return;
         setBusy(true);
         try {
-            const res = await api.post("/patient/ai-chat", { symptom_input: symptomInput });
+            const res = await api.post("/patient/ai-chat", { symptom_input: symptomInput, language: "en" });
             setTriage(res.data);
             enqueueSnackbar("Triage analysis complete", { variant: "info" });
-            if (res.data.severity === 'critical') {
+            if (res.data?.severity === "critical") {
                 setSosOpen(true);
             }
         } catch {
@@ -194,14 +194,14 @@ export default function PatientDashboard() {
                                             <span className="text-xs text-slate-500">Choose date/time before booking</span>
                                         </div>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                            {triage.doctor_suggestions.map((doc) => (
-                                                <div key={doc.id} className="p-5 rounded-2xl border border-slate-100 bg-white flex justify-between items-center">
+                                            {triage.doctor_suggestions.map((doc, idx) => (
+                                                <div key={doc.doctor_id ?? idx} className="p-5 rounded-2xl border border-slate-100 bg-white flex justify-between items-center">
                                                     <div>
-                                                        <p className="text-sm font-bold text-slate-900">{doc.name}</p>
-                                                        <p className="text-xs text-slate-500">{doc.specialization || "General"} | Rs {doc.consultation_fee ?? 0}</p>
+                                                        <p className="text-sm font-bold text-slate-900">Dr. #{doc.doctor_id}</p>
+                                                        <p className="text-xs text-slate-500">{doc.specialization || "General"} | ₹{doc.consultation_fee ?? 0} | ⭐ {doc.rating ?? "-"}</p>
                                                     </div>
                                                     <button
-                                                        onClick={() => bookAppointment(doc.id)}
+                                                        onClick={() => bookAppointment(doc.doctor_id)}
                                                         className="px-3 py-2 rounded-xl bg-slate-900 text-white text-xs"
                                                     >
                                                         Book

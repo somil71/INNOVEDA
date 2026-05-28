@@ -1,214 +1,149 @@
 # INOVEDA
 
-AI-based healthcare bridge system prototype for rural India.
+AI-powered healthcare bridge system for rural India — connecting patients with doctors through intelligent triage, real-time chat, and outbreak monitoring.
 
-- Production Ready: Yes (Hardened DB, Scalable WS, Async AI)
-- Docker: Supported
+**Status:** Production-ready (v0.2.0 — fully audited and hardened)
+
+---
 
 ## Stack
 
-- Backend: FastAPI + SQLAlchemy + PostgreSQL
-- Frontend: React (Vite)
-- Auth: JWT + bcrypt
-- Realtime: WebSocket chat + WebRTC signaling
-- AI: Mock triage by default, optional OpenAI integration
-- i18n: English + Hindi (i18next)
-- PWA: Offline caching enabled via `vite-plugin-pwa`
+| Layer | Technology |
+|-------|-----------|
+| Backend | FastAPI 0.111, SQLAlchemy 2, Alembic, Uvicorn |
+| Frontend | React 19, Vite 7, Tailwind CSS v4, Material UI v7 |
+| Database | PostgreSQL 15 (SQLite supported for local dev) |
+| Auth | JWT (python-jose) + bcrypt (passlib), HttpOnly cookies |
+| AI/ML | scikit-learn triage classifier, optional OpenAI (GPT-4o-mini) |
+| Real-time | WebSocket chat + WebRTC signaling |
+| Queue | Celery + Redis (optional) |
+| i18n | i18next — English + Hindi |
+| PWA | `vite-plugin-pwa` — offline caching |
+| Observability | Prometheus metrics, structured JSON request logging |
 
-## Project Structure
+---
 
-```text
-inoveda/
-├── backend/
-│   ├── main.py
-│   ├── core/
-│   ├── repositories/
-│   ├── models.py
-│   ├── schemas.py
-│   ├── auth.py
-│   ├── routes/
-│   ├── services/
-│   ├── tests/
-│   ├── ml/
-│   ├── uploads/
-│   └── database.py
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   └── vite.config.js
-└── README.md
-```
+## Quick Start
 
-## Backend Installation
+### Backend
 
-1. Go to backend folder:
 ```bash
 cd inoveda/backend
-```
-2. Create virtual environment:
-```bash
-python -m venv venv
-```
-3. Activate environment:
-```bash
-# Windows PowerShell
-.\venv\Scripts\Activate.ps1
-```
-4. Install packages:
-```bash
+python -m venv venv && .\venv\Scripts\Activate.ps1   # Windows
+# source venv/bin/activate                            # macOS/Linux
 pip install -r requirements.txt
-```
-
-### Required pip packages
-
-- `fastapi`
-- `uvicorn`
-- `sqlalchemy`
-- `python-jose`
-- `passlib[bcrypt]`
-- `email-validator`
-- `python-multipart`
-- `pydantic`
-- `openai`
-- `pydantic-settings`
-- `python-dotenv`
-- `joblib`
-- `numpy<2`
-- `scikit-learn`
-- `pytest`
-- `pytest-asyncio`
-- `httpx`
-
-### Run backend
-
-```bash
-# Run API
-uvicorn main:app --reload --port 8000
-
-# Run Celery Worker (in a separate terminal)
-celery -A celery_app worker --loglevel=info
-```
-
-### Docker Compose (Recommended for Production Setup)
-
-To run the entire stack (PostgreSQL, Redis, API, Worker) with one command:
-
-```bash
-docker-compose up --build
-```
-
-API docs: `http://localhost:8000/docs`
-
-### Retrain severity model
-
-```bash
-cd inoveda/backend
-python ml/train_model.py
-```
-
-This generates: `backend/ml/triage_model.joblib`
-
-### Database Migrations
-
-```bash
-cd inoveda/backend
-# Generate migration (after model changes)
-alembic revision --autogenerate -m "description"
-# Apply migrations
+cp .env.example .env          # edit DATABASE_URL and JWT_SECRET
 alembic upgrade head
+uvicorn main:app --reload --port 8000
 ```
 
-### Run tests
+API docs: http://localhost:8000/docs
 
-## Frontend Installation
+### Frontend
 
-1. Go to frontend folder:
 ```bash
 cd inoveda/frontend
-```
-2. Install packages:
-```bash
 npm install
-```
-
-### Required npm packages
-
-- `react`
-- `react-dom`
-- `vite`
-- `@vitejs/plugin-react`
-- `axios`
-- `react-router-dom`
-- `i18next`
-- `react-i18next`
-- `recharts`
-- `vite-plugin-pwa`
-
-### Run frontend
-
-```bash
+cp .env.example .env          # set VITE_API_URL=http://localhost:8000
 npm run dev
 ```
 
-Frontend URL: `http://localhost:5173`
+Frontend: http://localhost:5173
 
-## Environment Variables (Optional)
+### Full stack (Docker Compose)
 
-Backend:
+```bash
+cp backend/.env.example backend/.env   # edit JWT_SECRET and CORS_ORIGINS
+docker compose up --build
+```
 
-- `DATABASE_URL` (default: `postgresql://postgres:postgres@localhost:5432/inoveda`)
-- `JWT_SECRET` (default: `inoveda-dev-secret`)
-- `JWT_EXPIRE_MINUTES` (default: `1440`)
-- `USE_OPENAI=true` to enable OpenAI triage
-- `OPENAI_API_KEY=...`
-- `OPENAI_MODEL=gpt-4o-mini` (optional)
-- `OUTBREAK_METHOD=zscore` or `poisson`
-- `MODEL_PATH=ml/triage_model.joblib`
+---
 
-Copy `backend/.env.example` to `backend/.env` and edit as needed.
+## Documentation
 
-## Implemented Features
+| Document | Contents |
+|----------|---------|
+| [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) | Local dev, Docker Compose, Vercel + Railway/Render/Fly.io, Kubernetes |
+| [RECOVERY_NOTES.md](RECOVERY_NOTES.md) | All 15 bugs found and fixed in the v0.2.0 audit (root causes + fixes) |
+| [CHANGELOG.md](CHANGELOG.md) | Version history and breaking changes |
 
-- Role-based auth (`patient`, `doctor`, `admin`)
-- JWT login/register routes (`/auth/login`, `/auth/register`)
-- Separate dashboards:
-  - `/patient-dashboard`
-  - `/doctor-dashboard`
-  - `/admin-dashboard`
-- AI symptom triage with severity classification
-- AI chat history stored in DB
-- Voice symptom input (browser speech recognition)
-- Patient document upload and viewing
-- Appointments booking
-- Doctor prescription upload + medicines auto-added to patient cart
-- Mock dosage reminder scheduler + notifications
-- Realtime user chat (WebSocket)
-- Video consultation signaling (WebRTC + WebSocket)
-- AreaNet disease trends + statistical outbreak alerts (z-score / Poisson)
-- Emergency requests + mock ambulance dispatch
-- English/Hindi toggle
-- PWA offline support and API caching fallback
+---
 
-## Refactor Notes
+## Project Structure
 
-- Added layered architecture:
-  - `routes/` thin HTTP handlers
-  - `services/` business logic
-  - `repositories/` DB access
-  - `core/` config, middleware, logging, exceptions
-- Added structured JSON logging + request ID tracing.
-- Added in-memory rate limiting middleware.
-- Added safer upload validation (extension + max size checks).
-- Added centralized exception handlers.
-- AI triage upgraded to hybrid pipeline:
-  - LLM extraction (optional) -> deterministic fallback
-  - local sklearn classifier (if model available)
-  - deterministic emergency override rules
-- Added full pytest suite for auth, patient, doctor, AI, outbreak, emergency, and websocket flows.
+```
+inoveda/
+├── backend/
+│   ├── main.py                # FastAPI app, middleware, startup
+│   ├── core/
+│   │   ├── config.py          # pydantic-settings, optional AWS Secrets
+│   │   ├── middleware.py      # async Redis rate limiting, request tracing
+│   │   ├── logging_config.py  # structured JSON logging
+│   │   └── exceptions.py      # centralized error handlers
+│   ├── routes/                # thin HTTP handlers (auth, patient, doctor, admin, ws)
+│   ├── services/              # business logic (auth, patient, triage, notifications…)
+│   ├── repositories/          # SQLAlchemy data access layer
+│   ├── models.py              # 14 SQLAlchemy models
+│   ├── schemas.py             # Pydantic request/response schemas
+│   ├── auth.py                # get_current_user, require_role dependencies
+│   ├── database.py            # engine, session, get_db
+│   ├── ml/                    # scikit-learn triage model + training script
+│   ├── alembic/               # database migrations
+│   ├── tests/                 # pytest test suite
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   └── .env.example
+├── frontend/
+│   ├── src/
+│   │   ├── pages/             # PatientDashboard, DoctorDashboard, AdminDashboard…
+│   │   ├── components/        # AIChatbox, EmergencyPanel, shared UI
+│   │   ├── api.js             # axios instance (VITE_API_URL)
+│   │   └── main.jsx
+│   ├── vite.config.js         # code splitting, chunk size tuning
+│   ├── package.json
+│   └── .env.example
+├── docker-compose.yml         # full stack: postgres, redis, api, worker, nginx, certbot
+├── nginx/nginx.conf           # reverse proxy + SSL termination
+├── k8s/                       # Kubernetes manifests
+├── vercel.json                # Vercel SPA deployment config
+├── DEPLOYMENT_GUIDE.md
+├── RECOVERY_NOTES.md
+└── CHANGELOG.md
+```
 
-## Important Notes
+---
 
-- This is a prototype and not suitable for production use.
-- WebRTC signaling is localhost-only and minimal.
-- File uploads are stored locally in `backend/uploads/`.
+## Features
+
+- **Role-based auth** — patient / doctor / admin with JWT + HttpOnly cookies
+- **AI symptom triage** — hybrid pipeline: LLM extraction (optional) → local ML classifier → deterministic emergency override; returns severity, confidence, doctor suggestions, and prescription advice
+- **Voice input** — browser Web Speech API for symptom input
+- **Appointments** — patient books, doctor manages
+- **Prescriptions** — doctor uploads PDF; medicines auto-added to patient cart
+- **Dosage reminders** — mock scheduler with WebSocket push notifications
+- **Real-time chat** — WebSocket with Redis pub/sub (Redis optional)
+- **Video consultation** — WebRTC signaling via WebSocket
+- **Document upload** — patient health records (PDF, images); stored locally or S3
+- **Disease trends** — area chart with per-disease breakdown
+- **Outbreak detection** — z-score and Poisson statistical alerts
+- **Emergency dispatch** — patient SOS → broadcast to nearby doctors
+- **Admin dashboard** — user management, disease trends, outbreak events
+- **English / Hindi** — runtime language toggle
+- **PWA** — installable, offline-capable with API response caching
+- **Prometheus metrics** — `/metrics` endpoint for scraping
+- **Structured logging** — JSON logs with request-ID tracing
+
+---
+
+## Environment Variables
+
+See [`backend/.env.example`](backend/.env.example) and [`frontend/.env.example`](frontend/.env.example) for the full annotated lists.
+
+Minimum required for production:
+
+| Variable | Where | Description |
+|----------|-------|-------------|
+| `DATABASE_URL` | backend | PostgreSQL connection string |
+| `JWT_SECRET` | backend | 32+ char random secret |
+| `CORS_ORIGINS` | backend | `["https://your-app.vercel.app"]` |
+| `VITE_API_URL` | frontend | `https://your-backend.railway.app` |

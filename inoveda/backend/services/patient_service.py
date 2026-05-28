@@ -1,5 +1,6 @@
 import asyncio
 import os
+import threading
 import uuid
 from pathlib import Path
 
@@ -11,6 +12,8 @@ from core.s3_utils import s3_service
 from models import User
 from repositories.clinical_repository import ClinicalRepository
 from repositories.doctor_repository import DoctorRepository
+from services.mock_scheduler import schedule_dosage_notification
+from services.notifications import manager
 
 
 class PatientService:
@@ -27,11 +30,6 @@ class PatientService:
             "appointments": len(appointments),
             "prescriptions": len(prescriptions),
         }
-
-    async def ai_chat(self, current_user: User, symptom_input: str, budget: float | None, language: str) -> dict:
-        from tasks import ai_triage_task
-        task = ai_triage_task.delay(current_user.id, symptom_input, budget, language)
-        return {"task_id": task.id, "status": "processing", "message": "AI triage processing in background"}
 
     def _safe_upload_path(self, filename: str) -> Path:
         ext = Path(filename).suffix.lower()
@@ -158,5 +156,7 @@ class PatientService:
         return {"message": "sent"}
 
     def trigger_mock_schedule(self, session_factory, current_user: User, medicine_name: str):
-        asyncio.create_task(schedule_dosage_notification(session_factory, current_user.id, medicine_name))
+        def _run():
+            asyncio.run(schedule_dosage_notification(session_factory, current_user.id, medicine_name))
+        threading.Thread(target=_run, daemon=True).start()
         return {"message": "Mock dosage reminder scheduled in 30 seconds"}

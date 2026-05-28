@@ -4,7 +4,7 @@ import api from "../api";
 import { Upload, FileText, ShoppingCart, ToggleLeft, ToggleRight } from "lucide-react";
 import { useSnackbar } from "notistack";
 
-const API_BASE = "http://localhost:8000";
+const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 function getFileName(filePath) {
     if (!filePath) return "document";

@@ -35,36 +35,54 @@ class RequestContextMiddleware(BaseHTTPMiddleware):
         return response
 
 
-import redis
+import redis.asyncio as aioredis
+
 
 class RedisRateLimitMiddleware(BaseHTTPMiddleware):
     def __init__(self, app):
         super().__init__(app)
         self.window_seconds = 60
         self.limit = settings.rate_limit_per_minute
-        self.redis = redis.from_url(settings.redis_url)
+        self._redis: aioredis.Redis | None = None
+
+    async def _get_redis(self) -> aioredis.Redis | None:
+        if self._redis is None:
+            try:
+                self._redis = aioredis.from_url(settings.redis_url, socket_connect_timeout=1)
+                await self._redis.ping()
+            except Exception:
+                logger.warning("redis_unavailable_rate_limit_disabled")
+                self._redis = None
+        return self._redis
 
     async def dispatch(self, request: Request, call_next):
-        if request.url.path.startswith("/ws/"):
+        skip_paths = ("/ws/", "/health", "/metrics")
+        if any(request.url.path.startswith(p) for p in skip_paths):
+            return await call_next(request)
+
+        redis_client = await self._get_redis()
+        if redis_client is None:
             return await call_next(request)
 
         client_host = request.client.host if request.client else "unknown"
-        # We use a sliding window via Redis sorted sets.
         key = f"rl:{client_host}:{request.url.path}"
         now = time.time()
-        
-        # Atomic sliding window increment
-        pipe = self.redis.pipeline()
-        pipe.zremrangebyscore(key, 0, now - self.window_seconds)
-        pipe.zadd(key, {str(now): now})
-        pipe.zcard(key)
-        pipe.expire(key, self.window_seconds + 10)
-        _, _, count, _ = pipe.execute()
 
-        if count > self.limit:
-            return JSONResponse(
-                status_code=429,
-                content={"detail": "Too many requests. Please try again later."},
-                headers={"Retry-After": str(self.window_seconds)},
-            )
+        try:
+            pipe = redis_client.pipeline()
+            pipe.zremrangebyscore(key, 0, now - self.window_seconds)
+            pipe.zadd(key, {str(now): now})
+            pipe.zcard(key)
+            pipe.expire(key, self.window_seconds + 10)
+            _, _, count, _ = await pipe.execute()
+
+            if count > self.limit:
+                return JSONResponse(
+                    status_code=429,
+                    content={"detail": "Too many requests. Please try again later."},
+                    headers={"Retry-After": str(self.window_seconds)},
+                )
+        except Exception:
+            logger.warning("redis_rate_limit_check_failed")
+
         return await call_next(request)
